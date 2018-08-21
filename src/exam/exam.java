@@ -1,0 +1,28 @@
+package exam;
+
+import java.util.Scanner;
+
+/**
+ * @author liuzhaolu
+ * @version create_time：2018/8/18 类说明:
+ */
+public class exam {
+    public static void main(String[] args) {
+        int m;
+        double sum,n;
+        Scanner sc = new Scanner(System.in);
+        while(sc.hasNext()){
+            n=sc.nextInt();
+            m=sc.nextInt();
+            sum=0;
+            for(int i=0;i<m;i++){
+                sum=sum+n;
+                n=Math.sqrt(n);
+            }
+            System.out.printf("%.2f",sum);
+            System.out.println();
+        }
+
+    }
+
+}
