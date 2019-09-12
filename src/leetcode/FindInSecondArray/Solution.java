@@ -7,36 +7,26 @@ package leetcode.FindInSecondArray;
  */
 public class Solution {
     public boolean Find(int target, int [][] array) {
-        int high = array.length;    //3
-        int wide = array[0].length;//5
-        //比最小的小，比最大的大
-        if(target < array[0][0] || target > array[high-1][wide-1]){
-            return false;
-        }
-        //先纵向比较，再横行比较
-        for(int i  = high - 1; i >= 0; i --){
-            if(target == array[i][0] || target == array[i][wide - 1]){
-                return true;
-            }
-            //再横行折半查找
-            if(target > array[i][0]){
-                int middle = wide / 2;
-                while (target != array[i][middle] || target!= array[i][middle-1]){
-                    middle = middle / 2;
-                    if(middle < 1){
-                        return false;
-                    }
-                }
-                return true;
+        for(int i=0;i<array.length;i++){
+            int low=0;
+            int high=array[i].length-1;
+            while(low<=high){
+                int mid=(low+high)/2;
+                if(target>array[i][mid])
+                    low=mid+1;
+                else if(target<array[i][mid])
+                    high=mid-1;
+                else
+                    return true;
             }
         }
         return false;
     }
 
     public static void main(String[] args){
-        int[][] array = {{12,15,18,20,21},{23,24,25,29,33},{34,38,44,54,66},};
+        int[][] array = {};
         Solution solution = new Solution();
-        if(solution.Find(23,array)){
+        if(solution.Find(7,array)){
             System.out.println("hello");
         }
     }
