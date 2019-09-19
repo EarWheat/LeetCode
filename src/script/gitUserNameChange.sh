@@ -12,5 +12,5 @@ spawn git add .
 interact
 spawn git commit -m $argv
 interact
-spawn git push origin master.
+spawn git push origin master
 interact
