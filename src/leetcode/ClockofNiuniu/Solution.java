@@ -40,13 +40,17 @@ public class Solution {
         targetTime[1] = scanner.nextInt();
         int targetMin = time2Min(targetTime);
         int lastMin = targetMin - needTime;    //最晚出发时间
+        int[] temp = new int[2];
         for(int i = 0; i < n; i++){
-            if(lastMin <= time2Min(array[i])){
-                System.out.println(array[i][0]+" "+array[i][1]);
-                break;
+            int m = time2Min(array[i]);
+            if(lastMin >= m){
+                int tempMin = time2Min(temp);
+                if(m > tempMin){
+                    temp = array[i];
+                }
             }
         }
-
+        System.out.println(temp[0]+" "+temp[1]);
     }
 
     //时间转分钟
