@@ -23,15 +23,5 @@ public class MirrorTree {
         }
         TreeNode temp;
         temp = root.getRight();
-        root.getRight() = root.getLeft();
-        root.getLeft() = temp;
-        if(root.left != null)
-        {
-            Mirror(root.left);
-        }
-        if(root.right != null)
-        {
-            Mirror(root.right);
-        }
     }
 }
