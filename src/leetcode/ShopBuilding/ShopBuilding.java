@@ -82,8 +82,4 @@ public class ShopBuilding {
         return result;
     }
 
-    // 方法二，利用栈
-    private static int[] viewBuilding2(int[] builds){
-
-    }
 }
