@@ -32,11 +32,10 @@ public class PointsLine {
             int max = 0;
             double rate = 0.0;
             for(int j=i+1;j<points.length;j++){
-                double gapx = new Double(points[i].x) - new Double(points[j].x);
-                double gapy = new Double(points[i].y) - new Double(points[j].y);
+                double gapx = (double) points[i].x - (double) points[j].x;
+                double gapy = (double) points[i].y - (double) points[j].y;
                 if(gapx == 0 && gapy == 0){
                     overlap++;
-                    continue;
                 }else if(gapx == 0){
                     vertical++;
                     max = Math.max(max,vertical);
@@ -46,7 +45,7 @@ public class PointsLine {
                 }else{
                     rate = gapy/gapx;
                     if(map.containsKey(rate)){
-                        map.put(rate,map.get(rate)+1);
+                        map.put(rate,Integer.parseInt(map.get(rate).toString())+1);
                     }else{
                         map.put(rate,1);
                     }
