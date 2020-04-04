@@ -1,5 +1,7 @@
 package leetcode.Trap;
 
+import java.util.Stack;
+
 /*
  * @author:liuzhaolu
  * @createTime: 2020-04-04 17:35
@@ -14,12 +16,14 @@ public class trap {
 //        int[] height1 = new int[]{4,2,3};        // 1
 //        int[] height2 = new int[]{4,2,0,3,2,5}; // 9
 //        int[] height3 = new int[]{4,2,0,3,2,4,3,4}; // 10
-        int[] height4 = new int[]{4,9,4,5,3,2};
+//        int[] height4 = new int[]{4,9,4,5,3,2};     // 1
+        int[] height5 = new int[]{0,7,1,4,6};   // 7
 //        System.out.println(trap(height));
 //        System.out.println(trap(height1));
 //        System.out.println(trap(height2));
 //        System.out.println(trap(height3));
-        System.out.println(trap(height4));
+//        System.out.println(trap(height4));
+        System.out.println(trap(height5));
     }
 
     public static int trap(int[] height) {
@@ -41,8 +45,14 @@ public class trap {
                             k++;
                         }
                         if(k == height.length - 1){
-                            result += are(i -1, k, height);
-                            return result;
+                            if(height[k] > height[i-1]){
+                                result += are(i -1, k, height);
+                                return result;
+                            } else {
+                                result += are(i - 1,j,height);
+                                i = j;
+                                break;
+                            }
                         }
                         result += are(i -1, k, height);
                         i = k;
@@ -62,5 +72,28 @@ public class trap {
             result = result - height[i];
         }
         return result;
+    }
+
+    // 答案
+    public int trapAnswer(int[] height) {
+        if (height == null) {
+            return 0;
+        }
+        Stack<Integer> stack = new Stack<>();
+        int ans = 0;
+        for (int i = 0; i < height.length; i++) {
+            while(!stack.isEmpty() && height[stack.peek()] < height[i]) {
+                int curIdx = stack.pop();
+                while (!stack.isEmpty() && height[stack.peek()] == height[curIdx]) {
+                    stack.pop();
+                }
+                if (!stack.isEmpty()) {
+                    int stackTop = stack.peek();
+                    ans += (Math.min(height[stackTop], height[i]) - height[curIdx]) * (i - stackTop - 1);
+                }
+            }
+            stack.add(i);
+        }
+        return ans;
     }
 }
