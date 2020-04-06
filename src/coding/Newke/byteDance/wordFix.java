@@ -20,18 +20,18 @@ import java.util.Scanner;
  */
 public class wordFix {
     public static void main(String[] args) {
-        String test = "helloo";
-        System.out.println(wordFix(test));
-        String test2 = "helllo";
-        System.out.println(wordFix(test2));
-        String test3 = "wooooooow";
-        System.out.println(wordFix(test3));
-//        Scanner scanner = new Scanner(System.in);
-//        int n = scanner.nextInt();
-//        for(int i = 0; i < n; i++){
-//            String str = scanner.nextLine();
-//            System.out.println(wordFix(str));
-//        }
+//        String test = "helloo";
+//        System.out.println(wordFix(test));
+//        String test2 = "helllo";
+//        System.out.println(wordFix(test2));
+//        String test3 = "wooooooow";
+//        System.out.println(wordFix(test3));
+        Scanner scanner = new Scanner(System.in);
+        int n = Integer.parseInt(scanner.nextLine());
+        for(int i = 0; i < n; i++){
+            String str = scanner.nextLine();
+            System.out.println(wordFix(str));
+        }
     }
 
     private static String wordFix(String str){
@@ -39,15 +39,26 @@ public class wordFix {
         if(str.length() < 2){
             return str;
         }
-        for(int i = 1; i < str.length() - 1; i++){
-            // 3连字母
-            if(str.charAt(i - 1) == str.charAt(i) && str.charAt(i) == str.charAt(i + 1)){
-                stringBuffer.replace(i,i + 2,str.substring(i, i + 1));
-            }
-            // AABB
-            if(i < str.length() - 2){
-                if(str.charAt(i - 1) == str.charAt(i) && str.charAt(i + 1) == str.charAt(i + 2)){
-                    stringBuffer.replace(i + 1,i + 3,String.valueOf(str.charAt(i + 1)));
+        boolean isContinue = true;
+        while (isContinue) {
+            str = stringBuffer.toString();
+            for (int i = 1; i < str.length() - 1; i++) {
+                // 3连字母
+                if (str.charAt(i - 1) == str.charAt(i) && str.charAt(i) == str.charAt(i + 1)) {
+                    stringBuffer.replace(i, i + 2, str.substring(i, i + 1));
+                    break;
+                }
+                // AABB
+                if (i < str.length() - 2) {
+                    if (str.charAt(i - 1) == str.charAt(i) && str.charAt(i + 1) == str.charAt(i + 2)) {
+                        stringBuffer.replace(i + 1, i + 3, String.valueOf(str.charAt(i + 1)));
+                        break;
+                    }
+                }
+                // 最后末尾
+                if(i == str.length() - 2){
+                    isContinue = false;
+                    break;
                 }
             }
         }
