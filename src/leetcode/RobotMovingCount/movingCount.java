@@ -10,6 +10,8 @@ import java.util.List;
 
  */
 public class movingCount {
+    boolean[][] visited;
+
     public static void main(String[] args) {
 //        System.out.println(movingCount(2,3,1));   // 3
 //        System.out.println(movingCount(3,1,0));   // 1
@@ -64,5 +66,15 @@ public class movingCount {
             total += j;
         }
         return total <= k;
+    }
+
+    // 标准答案DFS
+    private int dfs(int x, int y, int m, int n, int k) {
+        if (x >= m || y >= n || visited[x][y]
+                || (x % 10 + x / 10 + y % 10 + y / 10) > k) {
+            return 0;
+        }
+        visited[x][y] = true;
+        return 1 + dfs(x + 1, y, m, n, k) + dfs(x, y + 1, m, n, k);
     }
 }
