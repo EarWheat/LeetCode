@@ -32,6 +32,12 @@ import java.util.Map;
   [0,1,1],
   [0,1,0]
 ]
+*
+* 思路: 题目要求不开辟额外的空间，使用in-place方法。因为要所有点统一刷新，但是for循环是一个一个的遍历，所以要即更新点，又要保存原来的状态。
+* 有一个int表示双含义的话，可以使用高位和低位来表示。
+* 因为只有死或两个状态，所以用0，1表示即可。
+* 10:新状态为1，旧状态为0
+* 11:新状态为活，旧状态为死
  */
 public class gameOfLife extends ShowArray {
     public static void main(String[] args) {
