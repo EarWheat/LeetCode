@@ -29,6 +29,9 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -45,7 +48,7 @@
   <component name="RunManager" selected="Application.newTest">
     <configuration name="Solution2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="leetcode.FrogJump.Solution2" />
-      <module name="Code" />
+      <module name="LeetCode" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
@@ -59,7 +62,7 @@
     </configuration>
     <configuration name="Solution_addTwoNumbers" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="test.Solution_addTwoNumbers" />
-      <module name="Code" />
+      <module name="LeetCode" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
@@ -79,7 +82,7 @@
     </configuration>
     <configuration name="exam3" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="exam.exam3" />
-      <module name="Code" />
+      <module name="LeetCode" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
@@ -93,7 +96,7 @@
     </configuration>
     <configuration name="exam4" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="exam.exam4" />
-      <module name="Code" />
+      <module name="LeetCode" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
@@ -107,7 +110,7 @@
     </configuration>
     <configuration name="newTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="test.newTest" />
-      <module name="Code" />
+      <module name="LeetCode" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
@@ -150,10 +153,10 @@
     <list>
       <item itemvalue="Application.exam3" />
       <item itemvalue="Application.exam4" />
-      <item itemvalue="Tomcat Server.Tomcat 8.0.45" />
       <item itemvalue="Application.Solution_addTwoNumbers" />
       <item itemvalue="Application.Solution2" />
       <item itemvalue="Application.newTest" />
+      <item itemvalue="Tomcat Server.Tomcat 8.0.45" />
     </list>
     <recent_temporary>
       <list>
