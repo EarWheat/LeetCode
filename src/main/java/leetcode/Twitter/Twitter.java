@@ -18,6 +18,15 @@ unfollow(followerId, followeeId): 取消关注一个用户
  */
 public class Twitter {
 
+    public static void main(String[] args) {
+        Twitter twitter = new Twitter();
+        // 用户1发送了一条新推文 (用户id = 1, 推文id = 5).
+        twitter.postTweet(1, 5);
+
+        // 用户1的获取推文应当返回一个列表，其中包含一个id为5的推文.
+        List list = twitter.getNewsFeed(1);
+        System.out.println(list);
+    }
 
     private class User{
         private int userId;
@@ -58,15 +67,18 @@ public class Twitter {
         }
     }
 
+    private User user;
+
     private static List<Integer> users;
 
-    private static Map<Integer, User> userInfo;
+    private static Map<Integer, User> userInfo; // key:userId, value: user
 
     /** Initialize your data structure here. */
     public Twitter() {
 
     }
 
+    // 通过UserId获取用户信息
     private static User getUserByUserId(int userId){
         if(userInfo.containsKey(userId)){
             return userInfo.get(userId);
@@ -77,12 +89,24 @@ public class Twitter {
     /** Compose a new tweet. */
     public void postTweet(int userId, int tweetId) {
         User user = getUserByUserId(userId);
+        if(user == null){
+            user = new User();
+            user.setUserId(userId);
+        }
+        // 发表推文
+        List<Integer> tweetList = user.getTweetList();
+        tweetList.add(5);
+        user.setTweetList(tweetList);
     }
 
     /** Retrieve the 10 most recent tweet ids in the user's news feed. Each item in the news feed must be posted by users who the user followed or by the user herself. Tweets must be ordered from most recent to least recent.
      * @return*/
     public List getNewsFeed(int userId) {
-        return new ArrayList();
+        User user = getUserByUserId(userId);
+        if(user == null){
+            return null;
+        }
+        return user.getTweetList();
     }
 
     /** Follower follows a followee. If the operation is invalid, it should be a no-op. */
