@@ -1,9 +1,8 @@
 package leetcode.Twitter;
 
 import java.awt.*;
-import java.util.ArrayList;
+import java.util.*;
 import java.util.List;
-import java.util.Map;
 
 /*
  * @author:liuzhaolu
@@ -25,7 +24,21 @@ public class Twitter {
 
         // 用户1的获取推文应当返回一个列表，其中包含一个id为5的推文.
         List list = twitter.getNewsFeed(1);
+        System.out.println("用户1的获取推文应当返回一个列表，其中包含一个id为5的推文");
         System.out.println(list);
+
+        // 用户1关注了用户2.
+        twitter.follow(1, 2);
+
+        // 用户2发送了一个新推文 (推文id = 6).
+        twitter.postTweet(2, 6);
+        System.out.println("用户2发送了一个新推文 (推文id = 6).");
+
+        // 用户1的获取推文应当返回一个列表，其中包含两个推文，id分别为 -> [6, 5].
+// 推文id6应当在推文id5之前，因为它是在5之后发送的.
+        list = twitter.getNewsFeed(1);
+        System.out.println(list);
+
     }
 
     private class User{
@@ -33,6 +46,12 @@ public class Twitter {
         private List<Integer> tweetList;
         private List<Integer> fans;
         private List<Integer> follow;
+
+        public User(){
+            tweetList = new ArrayList<>();
+            fans = new ArrayList<>();
+            follow = new ArrayList<>();
+        }
 
         public int getUserId() {
             return userId;
@@ -43,11 +62,25 @@ public class Twitter {
         }
 
         public List<Integer> getTweetList() {
-            return tweetList;
+            // 关注为空
+            if(follow.isEmpty()){
+                return tweetList;
+            } else {
+                List<Integer> result = new ArrayList<>();
+                List<Integer> followList = new ArrayList<>();
+                // 取关注10条
+                // 取自己10条
+                // 按时间排序展示10条
+                return result;
+            }
         }
 
         public void setTweetList(List<Integer> tweetList) {
             this.tweetList = tweetList;
+        }
+
+        public void setTweetList(Integer tweet){
+            tweetList.add(tweet);
         }
 
         public List<Integer> getFans() {
@@ -58,12 +91,20 @@ public class Twitter {
             this.fans = fans;
         }
 
+        public void setFans(Integer followId){
+            follow.add(followId);
+        }
+
         public List<Integer> getFollow() {
             return follow;
         }
 
         public void setFollow(List<Integer> follow) {
             this.follow = follow;
+        }
+
+        public void setFollow(Integer followee){
+            follow.add(followee);
         }
     }
 
@@ -75,43 +116,42 @@ public class Twitter {
 
     /** Initialize your data structure here. */
     public Twitter() {
-
+        userInfo = new HashMap<>();
     }
 
     // 通过UserId获取用户信息
-    private static User getUserByUserId(int userId){
+    private User getUserByUserId(int userId){
         if(userInfo.containsKey(userId)){
             return userInfo.get(userId);
+        } else {
+            User user = new User();
+            user.setUserId(userId);
+            userInfo.put(userId,user);
+            return user;
         }
-        return null;
     }
 
     /** Compose a new tweet. */
     public void postTweet(int userId, int tweetId) {
         User user = getUserByUserId(userId);
-        if(user == null){
-            user = new User();
-            user.setUserId(userId);
-        }
         // 发表推文
-        List<Integer> tweetList = user.getTweetList();
-        tweetList.add(5);
-        user.setTweetList(tweetList);
+        user.setTweetList(tweetId);
     }
 
     /** Retrieve the 10 most recent tweet ids in the user's news feed. Each item in the news feed must be posted by users who the user followed or by the user herself. Tweets must be ordered from most recent to least recent.
      * @return*/
     public List getNewsFeed(int userId) {
         User user = getUserByUserId(userId);
-        if(user == null){
-            return null;
-        }
         return user.getTweetList();
     }
 
     /** Follower follows a followee. If the operation is invalid, it should be a no-op. */
     public void follow(int followerId, int followeeId) {
-
+        // fans
+        User fans = getUserByUserId(followerId);
+        User star = getUserByUserId(followeeId);
+        fans.setFollow(followeeId);
+        star.setFans(followerId);
     }
 
     /** Follower unfollows a followee. If the operation is invalid, it should be a no-op. */
