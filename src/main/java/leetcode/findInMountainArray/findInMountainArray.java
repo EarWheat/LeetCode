@@ -60,52 +60,38 @@ public class findInMountainArray {
         int[] test = {1,2,3,4,5,3,1};
         int[] test2 = {0,1,2,4,2,1};
         int[] test3 = {2,3,4,5,3,1};
-        MountainArr mountainArr = new MountainArr(test);
+        int[] test4 = {1,5,2};
+        int[] test5 = {3,5,3,2,0};
+        MountainArr mountainArr1 = new MountainArr(test);
         MountainArr mountainArr2 = new MountainArr(test2);
         MountainArr mountainArr3 = new MountainArr(test3);
-        System.out.println(search(3,mountainArr,0,mountainArr.length()-1));     // 2
-        System.out.println(search(3,mountainArr2,0,mountainArr2.length()-1));     // -1
-        System.out.println(search(1,mountainArr3,0,mountainArr3.length()-1));    // 6
+        MountainArr mountainArr4 = new MountainArr(test4);
+        MountainArr mountainArr5 = new MountainArr(test5);
+//        System.out.println(findInMountainArray(3,mountainArr1));     // 2
+//        System.out.println(findInMountainArray(3,mountainArr2));     // -1
+//        System.out.println(findInMountainArray(1,mountainArr3));    // 5
+//        System.out.println(findInMountainArray(1,mountainArr4));   // 0
+        System.out.println(findInMountainArray(3,mountainArr5)); // 0
     }
 
     public static int findInMountainArray(int target, MountainArray mountainArr) {
-        int left  = 0;
-        int right = mountainArr.length() - 1;
-        while (left <= right){
-            int middle = left + (right - left) / 2;
-            int mountainArrMiddle = mountainArr.get(middle);
-            if(mountainArrMiddle == target){
-                return middle;
-            }
-            // 左峰，攀升
-            if(mountainArrMiddle <= mountainArr.get(middle + 1)){
-                // 左峰为有序数组，右峰仍为山峰数组
-
-                // 返回右侧
-                if(mountainArrMiddle <= target){
-                    left = middle + 1;
-                } else { // 返回左侧
-                    right = middle - 1;
-                }
-            } else { // 右峰，下降
-                // 返回右侧
-                if(mountainArrMiddle >= target){
-                    left = middle + 1;
-                } else {
-                    right = middle - 1;
-                }
-            }
-        }
-        return -1;
+        return search(target,mountainArr,0,mountainArr.length() - 1);
     }
 
     public static int search(int target, MountainArray mountainArray, int left, int right){
-        if(left == right){
+        if(left >= right){
+            if(mountainArray.get(left) == target){
+                return left;
+            }
             return -1;
         }
         int middle = left + (right - left) / 2;
         int mountainArrMiddle = mountainArray.get(middle);
         if(mountainArrMiddle == target){
+            int min = search(target,mountainArray,left,middle-1);
+            if(min != -1){
+                return min;
+            }
             return middle;
         }
         // 左峰，攀升
@@ -142,7 +128,10 @@ public class findInMountainArray {
     }
 
     public static int erFenSearchUp(int target, MountainArray mountainArray, int left, int right){
-        if(left == right){
+        if(left >= right){
+            if(mountainArray.get(left) == target){
+                return left;
+            }
             return -1;
         }
         int middle = left + (right - left) / 2;
@@ -158,7 +147,10 @@ public class findInMountainArray {
     }
 
     public static int erFenSearchDown(int target, MountainArray mountainArray, int left, int right){
-        if(left == right){
+        if(left >= right){
+            if(mountainArray.get(left) == target){
+                return left;
+            }
             return -1;
         }
         int middle = left + (right - left) / 2;
