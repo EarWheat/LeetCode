@@ -96,13 +96,20 @@ public class Twitter {
                 List<Integer> followList = new ArrayList<>();
                 // 取关注10条
                 for(int i = 0; i < follow.size();i++){
-
+                    int followId = follow.get(i);
                 }
                 // 取自己10条
                 // 按时间排序展示10条
                 return result;
             }
         }
+
+        public List<Integer> getTweetList(int userId){
+            User user = getUserByUserId(userId);
+            return user.getTweetList();
+        }
+
+
 
         public void setTweetList(List<Integer> tweetList) {
             this.tweetList = tweetList;
