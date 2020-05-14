@@ -34,6 +34,9 @@ public class levelOrder {
     public static List<List<Integer>> levelOrder(TreeNode root) {
         List<List<Integer>> result = new ArrayList<>();
         Queue<TreeNode> queue = new LinkedList<>();
+        if(root == null){
+            return result;
+        }
         // 先入队列
         queue.offer(root);
         return currentOrder(queue,result);
