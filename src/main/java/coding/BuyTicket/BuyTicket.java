@@ -10,6 +10,12 @@ public class BuyTicket implements Runnable{
     private  int ticketNum=10;
     //标志位
     private boolean flag=true;
+
+    private String name;
+
+    public BuyTicket(String name){
+        this.name = name;
+    }
     @Override
     public void run() {
         while (flag){
@@ -20,7 +26,7 @@ public class BuyTicket implements Runnable{
     public synchronized void buyTicket(){
         //模仿网络延时
         try {
-            Thread.currentThread().sleep(100);
+            Thread.sleep(100);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
