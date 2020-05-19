@@ -1,4 +1,4 @@
-package main.java.leetcode.isValidBST;
+package leetcode.isValidBST;
 
 /*
  * @author:liuzhaolu

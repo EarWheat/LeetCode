@@ -1,4 +1,5 @@
-package main.java.leetcode.levelOrder;
+package leetcode.levelOrder;
+
 
 import java.util.*;
 

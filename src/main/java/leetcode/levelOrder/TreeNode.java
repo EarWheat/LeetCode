@@ -1,4 +1,4 @@
-package main.java.leetcode.levelOrder;
+package leetcode.levelOrder;
 
 /*
  * @author:liuzhaolu
