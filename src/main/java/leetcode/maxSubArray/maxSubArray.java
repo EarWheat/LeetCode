@@ -1,4 +1,4 @@
-package main.java.leetcode.maxSubArray;
+package leetcode.maxSubArray;
 
 /*
  * @author:liuzhaolu
