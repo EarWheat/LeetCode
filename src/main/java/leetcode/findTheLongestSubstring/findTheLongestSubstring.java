@@ -48,6 +48,7 @@ public class findTheLongestSubstring {
                 map.put(chars[i], i);
             }
         }
+        return 0;
     }
 
     private static boolean isYuanyin(char c){
