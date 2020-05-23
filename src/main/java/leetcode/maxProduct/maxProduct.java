@@ -20,9 +20,6 @@ package leetcode.maxProduct;
 
  */
 public class maxProduct {
-    public int maxProduct(int[] nums) {
-
-    }
 
     public static void main(String[] args) {
         
