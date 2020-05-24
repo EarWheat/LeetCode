@@ -50,7 +50,82 @@ p = "mis*is*p*."
 输出: false
  */
 public class isMatch {
-    public boolean isMatch(String s, String p) {
+    public static void main(String[] args) {
+        String s = "aaa";
+        String p = "a*aaaa";
+        System.out.println(isMatch(s, p));
+    }
 
+    public static boolean isMatch(String s, String p) {
+        int i = 0;  // s指针
+        int j = 0;  // p指针
+        while (j < p.length()) {
+            if(i == s.length()){
+                break;
+            }
+            // s, p 相等
+            if(s.charAt(i) == p.charAt(j)){
+                i++;
+                j++;
+            } else {
+                if(p.charAt(j) == '*'){
+                    // 第0个数字为*
+                    if(j == 0){
+                        j++;
+                        continue;
+                    }
+                    char lastWord = p.charAt(j - 1);
+                    if(lastWord == '.'){
+                        i++;
+                        continue;
+                    }
+                    if(s.charAt(i) == lastWord){    // 匹配N个
+                        while (s.charAt(i) == lastWord){
+                            i++;
+                            if(i == s.length()){
+                                break;
+                            }
+                        }
+                        if(i == s.length()){
+                            break;
+                        }
+                    } else {    // 上一个字符不想等, 匹配0个
+                        j++;
+                    }
+                } else if(p.charAt(j) == '.'){
+                   i++;
+                   j++;
+                } else {
+                    if(p.length() < 2){
+                        return false;
+                    } else {
+                        if(j == p.length() - 1){
+                            return false;
+                        }
+                        if(p.charAt(j+1) == '*'){
+                            j = j+2;
+                            continue;
+                        }
+                        return false;
+                    }
+                }
+            }
+
+        }
+        // 最后各自遍历
+        if(i != s.length()){
+            return false;
+        }
+        if(j < p.length()){
+            if(p.charAt(p.length() -1) != '*' && p.charAt(p.length() - 1) != s.charAt(s.length() -1)){
+                return false;
+            } else {
+                return true;
+            }
+        }
+        if(i == s.length() && j == p.length()){
+            return true;
+        }
+        return false;
     }
 }
