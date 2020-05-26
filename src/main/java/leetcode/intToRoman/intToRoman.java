@@ -60,14 +60,18 @@ public class intToRoman {
         for(int i = 0; i < romanNum.length; i++){
             int numOfChar = num / romanNum[i];
             if(numOfChar == 4){
-                // 奇数为500，偶数为10
-                if(i % 2 == 0){
-                    stringBuilder.deleteCharAt(stringBuilder.length() - 1);
-                    stringBuilder.append(romanChar[i]);
-                    stringBuilder.append(romanChar[i - 2]);
-                } else {
+                if(stringBuilder.length() == 0){
                     stringBuilder.append(romanChar[i]);
                     stringBuilder.append(romanChar[i - 1]);
+                } else {
+                    if(stringBuilder.charAt(stringBuilder.length() - 1) == romanChar[i - 1]){
+                        stringBuilder.deleteCharAt(stringBuilder.length() - 1);
+                        stringBuilder.append(romanChar[i]);
+                        stringBuilder.append(romanChar[i - 2]);
+                    } else {
+                        stringBuilder.append(romanChar[i]);
+                        stringBuilder.append(romanChar[i - 1]);
+                    }
                 }
             } else {
                 for(int j = 0; j < numOfChar; j++){
