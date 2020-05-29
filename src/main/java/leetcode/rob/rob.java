@@ -25,6 +25,9 @@ public class rob {
     public static int rob(int[] nums) {
         // 动态规划
         // 假如只有一个房间
+        if(nums.length < 1){
+            return 0;
+        }
         if(nums.length == 1){
             return nums[0];
         }
