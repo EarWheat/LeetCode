@@ -27,8 +27,9 @@ import java.util.List;
 public class isPalindrome {
 
     public static void main(String[] args) {
-        int x = 10;
+        int x = 1221;
         System.out.println(isPalindrome(x));
+        System.out.println(newAnswer(x));
     }
 
     public static boolean isPalindrome(int x) {
@@ -47,5 +48,30 @@ public class isPalindrome {
             y = y * 10 + integer;
         }
         return x == y;
+    }
+
+    // 新答案按照string来判断
+    public static boolean newAnswer(int x){
+        String str = String.valueOf(x);
+        // 负数return
+        if(str.charAt(0) == '-'){
+            return false;
+        } else {    // 只处理正数，判断是否是回文字符串
+            return isPalindromeStr(str);
+        }
+    }
+
+    // 判断是否是回文字符串
+    public static boolean isPalindromeStr(String s){
+        if(s.length() <= 1){
+            return true;
+        }
+        if(s.length() == 2){
+            return s.charAt(0) == s.charAt(1);
+        }
+        if(s.charAt(0) == s.charAt(s.length()-1)){
+            return isPalindromeStr(s.substring(1,s.length() - 1));
+        }
+        return false;
     }
 }
