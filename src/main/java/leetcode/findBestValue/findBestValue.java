@@ -67,7 +67,56 @@ public class findBestValue {
         System.out.println(findBestValue(new int[]{4,9,3},10));     // 3
         System.out.println(findBestValue(new int[]{2,3,5}, 10));    // 5
         System.out.println(findBestValue(new int[]{2,3,7}, 12));    // 7
-//        System.out.println(findBestValue(new int[]{60864,25176,27249,21296,20204}, 56803)); // 11361
+        System.out.println(findBestValue(new int[]{60864,25176,27249,21296,20204}, 56803)); // 11361
         System.out.println(findBestValue(new int[]{1547,83230,57084,93444,70879},71237));  // 17422
+
+        System.out.println("===========================");
+        System.out.println(youhuaAnswer(new int[]{15,1,1,1,1,1,1,1,1,1,1,1},50));   // 15
+        System.out.println(youhuaAnswer(new int[]{2,3,5},11));   // 5
+        System.out.println(youhuaAnswer(new int[]{4,9,3},10));     // 3
+        System.out.println(youhuaAnswer(new int[]{2,3,5}, 10));    // 5
+        System.out.println(youhuaAnswer(new int[]{2,3,7}, 12));    // 7
+        System.out.println(youhuaAnswer(new int[]{60864,25176,27249,21296,20204}, 56803)); // 11361
+        System.out.println(youhuaAnswer(new int[]{1547,83230,57084,93444,70879},71237));  // 17422
+    }
+
+    // 优化答案
+    public static int youhuaAnswer(int[] arr, int target){
+        if(arr.length <= 1){
+            return arr[0];
+        }
+        Arrays.sort(arr);
+        return findBestValueV2(arr, target);
+    }
+
+    public static int findBestValueV2(int[] arr, int target){
+        if(arr.length <= 1){
+            return arr[0];
+        }
+        double tempMiddle = (float)target / (float)arr.length;
+        double maxMiddle = Math.ceil(tempMiddle);
+        int middle;
+        if(maxMiddle - tempMiddle >= 0.5){
+            middle = (int)tempMiddle;
+        } else {
+            middle = (int)maxMiddle;
+        }
+        // 所有值都比均值大，需要减小;
+        if(arr[0] >= middle){
+            return middle;
+        }
+        // 最大值都比middle小
+        if(arr[arr.length - 1] <= middle){
+            return arr[arr.length-1];
+        }
+        // 一次性去掉比middle小的数
+        int i = 0;
+        for(i = 0; i < arr.length; i++){
+            if(arr[i] >= middle){
+                break;
+            }
+            target = target - arr[i];
+        }
+        return findBestValueV2(Arrays.copyOfRange(arr,i ,arr.length), target);
     }
 }
