@@ -40,7 +40,7 @@ public class patternMatchingAnswer {
             return stringBuilder.toString().equals(value);
         } else {
             // 遍历a的长度。
-            for(int i = 1; i < value.length(); i++){
+            for(int i = 0; i < value.length() + 1; i++){
                 String a = value.substring(0,i);
                 // a的长度
                 int la = a.length();
@@ -117,6 +117,8 @@ public class patternMatchingAnswer {
 //        System.out.println(patternMatching("aba","dogdogfishdog"));    // true
         System.out.println("-------");
 //        System.out.println(patternMatching("ab",""));
-        System.out.println(patternMatching("bbba", "xxxxxxy"));
+//        System.out.println(patternMatching("bbba", "xxxxxxy"));
+//        System.out.println(patternMatching("aaaaab","xahnxdxyaahnxdxyaahnxdxyaahnxdxyaauxuhuo"));
+        System.out.println(patternMatching("abb","dryqxzysggjljxdxag"));
     }
 }
