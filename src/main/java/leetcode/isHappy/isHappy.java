@@ -1,5 +1,8 @@
-package main.java.leetcode.isHappy;
+package leetcode.isHappy;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -31,8 +34,9 @@ import java.util.Map;
 public class isHappy {
 
     public static void main(String[] args) {
-//        System.out.println(isHappy(19));
-        System.out.println(isHappy(10));
+        String sOid = "TVRRME1USTVOemMyT0RBMk5qazVNamcxTVE9PQ==";
+        System.out.println(sOid.substring(0, sOid.length() - 2));
+//        System.out.println(isHappy(10));
     }
 
     public static boolean isHappy(int n) {
