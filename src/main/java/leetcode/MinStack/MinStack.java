@@ -1,4 +1,4 @@
-package main.java.leetcode.MinStack;
+package leetcode.MinStack;
 
 import java.util.ArrayList;
 import java.util.List;

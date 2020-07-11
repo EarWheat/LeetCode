@@ -1,4 +1,4 @@
-package main.java.leetcode.findMedianSortedArrays;
+package leetcode.findMedianSortedArrays;
 
 /*
  * @author:liuzhaolu

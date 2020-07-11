@@ -1,4 +1,4 @@
-package main.java.leetcode.findInMountainArray;
+package leetcode.findInMountainArray;
 
 /*
  * @author:liuzhaolu

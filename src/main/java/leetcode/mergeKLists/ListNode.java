@@ -1,4 +1,4 @@
-package main.java.leetcode.mergeKLists;
+package leetcode.mergeKLists;
 
 /*
  * @author:liuzhaolu

@@ -1,4 +1,4 @@
-package main.java.leetcode.maximalSquare;
+package leetcode.maximalSquare;
 
 /*
  * @author:liuzhaolu

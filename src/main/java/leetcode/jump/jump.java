@@ -1,4 +1,4 @@
-package main.java.leetcode.jump;
+package leetcode.jump;
 
 import java.util.HashMap;
 import java.util.Map;

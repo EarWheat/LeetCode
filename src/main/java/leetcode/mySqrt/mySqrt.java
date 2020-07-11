@@ -1,4 +1,4 @@
-package main.java.leetcode.mySqrt;
+package leetcode.mySqrt;
 
 /*
  * @author:liuzhaolu

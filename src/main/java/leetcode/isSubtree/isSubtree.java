@@ -1,4 +1,4 @@
-package main.java.leetcode.isSubtree;
+package leetcode.isSubtree;
 
 /*
  * @author:liuzhaolu

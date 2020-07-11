@@ -1,4 +1,4 @@
-package main.java.leetcode.lowestCommonAncestor;
+package leetcode.lowestCommonAncestor;
 
 /*
  * @author:liuzhaolu

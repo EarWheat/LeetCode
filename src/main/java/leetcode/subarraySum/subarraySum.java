@@ -1,4 +1,4 @@
-package main.java.leetcode.subarraySum;
+package leetcode.subarraySum;
 
 /*
  * @author:liuzhaolu

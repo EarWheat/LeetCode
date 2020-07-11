@@ -1,4 +1,4 @@
-package main.java.leetcode.myPow;
+package leetcode.myPow;
 
 /*
  * @author:liuzhaolu

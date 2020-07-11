@@ -1,4 +1,4 @@
-package main.java.leetcode.singleNumbers;
+package leetcode.singleNumbers;
 
 import java.util.Arrays;
 import java.util.Collections;
