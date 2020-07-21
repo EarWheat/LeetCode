@@ -1,6 +1,5 @@
-package leetcode.RebuildTree;
+package leetcode.Tree.RebuildTree;
 
-import leetcode.tree.TreeNode;
 
 import java.util.Arrays;
 
@@ -18,8 +17,8 @@ public class Solution {
         TreeNode node = new TreeNode();
         for(int i = 0; i < in.length; i++){
             if(pre[0] == in[i]){
-                node.setLeft(reConstructBinaryTree(Arrays.copyOfRange(pre, 1, i+1), Arrays.copyOfRange(in, 0, i)));
-                node.setRight(reConstructBinaryTree(Arrays.copyOfRange(pre, i+1, pre.length), Arrays.copyOfRange(in, i+1,in.length)));
+                node.left = reConstructBinaryTree(Arrays.copyOfRange(pre, 1, i+1), Arrays.copyOfRange(in, 0, i));
+                node.right = reConstructBinaryTree(Arrays.copyOfRange(pre, i+1, pre.length), Arrays.copyOfRange(in, i+1,in.length));
             }
         }
         return node;

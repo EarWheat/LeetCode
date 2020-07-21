@@ -1,4 +1,4 @@
-package leetcode.numTrees;
+package leetcode.Tree.numTrees;
 
 /*
  * @author:liuzhaolu

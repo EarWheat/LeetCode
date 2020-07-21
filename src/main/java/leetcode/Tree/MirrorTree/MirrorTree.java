@@ -1,6 +1,5 @@
-package leetcode.MirrorTree;
+package leetcode.Tree.MirrorTree;
 
-import leetcode.tree.TreeNode;
 
 /*
  * @author:liuzhaolu
@@ -17,11 +16,11 @@ public class MirrorTree {
         {
             return;
         }
-        if(root.getLeft() == null && root.getRight() == null)
+        if(root.left == null && root.right == null)
         {
             return;
         }
         TreeNode temp;
-        temp = root.getRight();
+        temp = root.right;
     }
 }
