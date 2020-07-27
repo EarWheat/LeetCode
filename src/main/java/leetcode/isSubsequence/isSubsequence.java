@@ -1,5 +1,7 @@
 package leetcode.isSubsequence;
 
+import org.apache.commons.lang.StringUtils;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -33,27 +35,33 @@ public class isSubsequence {
     public static void main(String[] args) {
 //        System.out.println(isSubsequence("abc","ahbgdc"));
 //        System.out.println(isSubsequence("axc","ahbgdc"));
-        System.out.println(isSubsequence("b","c"));
+//        System.out.println(isSubsequence("b","c"));
+
+        System.out.println(mergeOrderIds("123,454534,54243","456,123"));
 
 
     }
 
     public static String mergeOrderIds(String s1, String s2){
-        if(s1 == null){
+        if(s1 == null || StringUtils.isBlank(s1)){
             return s2;
         }
-        if(s2 == null){
+        if(s2 == null || StringUtils.isBlank(s2)){
             return s1;
         }
         String[] orderIds1 = s1.split(",");
         String[] orderIds2 = s2.split(",");
         List<String> orderIds = new ArrayList<>();
-        for(int i = 0;i < orderIds1.length;i++){
-            orderIds.add(orderIds1[i]);
+        for (String ids : orderIds1){
+            if(StringUtils.isNotBlank(ids)){
+                orderIds.add(ids);
+            }
         }
-        for(int i = 0; i< orderIds2.length;i++){
-            if(!orderIds.contains(orderIds2[i])){
-                orderIds.add(orderIds2[i]);
+        for (String ids : orderIds2){
+            if(StringUtils.isNotBlank(ids)){
+                if(!orderIds.contains(ids)){
+                    orderIds.add(ids);
+                }
             }
         }
         StringBuilder stringBuilder = new StringBuilder();
