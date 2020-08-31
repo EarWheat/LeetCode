@@ -1,6 +1,5 @@
 package coding;
 
-import test.Solution;
 
 import java.util.Scanner;
 
@@ -46,13 +45,4 @@ public class twoSum {
         return result;
     }
 
-    public static void main(String args[]){
-        Solution solution = new Solution();
-        int[] nums = { 3, 2, 4 };
-        Scanner sc = new Scanner(System.in);
-        while (sc.hasNextInt()){
-            int target = sc.nextInt();
-            solution.twoSum(nums,target);
-        }
-    }
 }
