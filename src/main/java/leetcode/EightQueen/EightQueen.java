@@ -11,7 +11,7 @@ public class EightQueen extends ShowArray {
     public static void main(String[] args){
         int eight = 8;
         int[] queen = new int[eight];
-        ShowArray(eightQueen(eight,0,0));
+        ShowArray(eightQueen(eight));
     }
 
     private static int[][] eightQueen(int eight){
