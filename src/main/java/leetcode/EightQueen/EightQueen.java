@@ -5,29 +5,20 @@ import UtilClass.ShowArray;
 /*
  * @author:liuzhaolu
  * @createTime: 2020-03-15 09:08
- * @desc:把皇后问题
+ * @desc:八皇后问题
  */
 public class EightQueen extends ShowArray {
     public static void main(String[] args){
         int eight = 8;
         int[] queen = new int[eight];
-
-//        ShowArray(angela(eight,7,0,result));
-
         ShowArray(eightQueen(eight,0,0));
     }
 
-    private static int[][] eightQueen(int eight, int i, int j){
+    private static int[][] eightQueen(int eight){
         int[][] result = new int[eight][eight];
-        for(int p = 0; p < eight; p++){
-            for(int q = 0; q < eight; q++){
-                if(result[p][q] != 2 && result[p][q] != 1){
-                    angela(eight, p, q, result);
-                    ShowArray(result);
-                    System.out.println("----------------");
-                    break;
-                }
-            }
+        for(int i = 0; i < eight; i++){
+            // 确定第i行Q的位置
+
         }
         return result;
     }
