@@ -41,9 +41,10 @@ public class combine {
             }
             return result;
         }
-        // 用n-1构建k-1个数
+        // n - 1个数构建k的组合 ----- 【1,3][2,3][1,2]
+        List<List<Integer>> before2 = combine(n - 1, k);
+        // 用n-1 构建k-1个数,再原有的所有组合上新增n ------ [1][2][3] + 4 == [1,4][2,4][3,4]
         List<List<Integer>> before = combine(n - 1, k -1);
-        List<List<Integer>> before2 = combine(n -1, k);
         for(List<Integer> list : before){
             list.add(n);
             result.add(list);
