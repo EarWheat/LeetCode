@@ -1,4 +1,4 @@
-package leetcode.zero.combine.leetcode.zero;
+package leetcode.zero.combine;
 
 import java.util.ArrayList;
 import java.util.Arrays;
