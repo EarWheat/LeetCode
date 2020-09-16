@@ -42,7 +42,7 @@ public class solveSudoku {
      * 试错，试每一个位置的可能值
      * @param board
      */
-    public void solveSudoku(char[][] board) throws IOException, ClassNotFoundException {
+    public void solveSudoku(char[][] board) {
 //        LinkedList<Set<Character>> lineUsedNum = new LinkedList<>();    // 行已经使用的数值
 //        LinkedList<Set<Character>> cellUsedNum = new LinkedList<>();    // 列已经使用的数值
 //        LinkedList<Set<Character>> squareUsedNum = new LinkedList<>();    // 3 * 3方格已经使用的数字
@@ -58,7 +58,6 @@ public class solveSudoku {
         // 初始化记录
         formatUsedNum(board);
         fillBoard(0,0,board,lineUsedNum,cellUsedNum,squareUsedNum);
-        System.out.println(board.toString());
     }
 
     // 先遍历一遍棋盘，存储已经填了的数字
@@ -79,7 +78,7 @@ public class solveSudoku {
         squareUsedNum.get(getSquareLocation(i,j)).add(board);
     }
 
-    // 找可以使用的自
+    // 找可以使用的数字
     private Set<Character> canUsed(int i, int j, LinkedList<Set<Character>> lineUsedNum, LinkedList<Set<Character>> cellUsedNum, LinkedList<Set<Character>> squareUsedNum){
         Set<Character> set = new HashSet<>();
         for(int n = 1; n <= 9; n++){
@@ -95,67 +94,51 @@ public class solveSudoku {
     }
 
     // 填充空白
-    private boolean fillBoard(int i, int j, char[][] board, LinkedList<Set<Character>> lineUsedNum, LinkedList<Set<Character>> cellUsedNum, LinkedList<Set<Character>> squareUsedNum) throws IOException, ClassNotFoundException {
-        while (i < board.length){
-            while (j < board[0].length){
-                if(board[i][j] == '.'){
-                    // 找可用的值
-                    Set<Character> canUsed = canUsed(i,j,lineUsedNum,cellUsedNum,squareUsedNum);
-                    if(canUsed.size() == 0){
-                        return false;
-                    }
-                    for(Character character : canUsed){
-                        // 尝试每一个可用的值
-                        board[i][j] = character;
-//                        LinkedList<Set<Character>> lineTemp = (LinkedList<Set<Character>>) deepCopy(lineUsedNum);
-//                        LinkedList<Set<Character>> cellTemp = (LinkedList<Set<Character>>) deepCopy(cellUsedNum);
-//                        LinkedList<Set<Character>> squareTemp = (LinkedList<Set<Character>>) deepCopy(squareUsedNum);
-//                        lineTemp.get(i).add(character);
-//                        cellTemp.get(j).add(character);
-//                        squareTemp.get(getSquareLocation(i,j)).add(character);
-                        lineUsedNum.get(i).add(character);
-                        cellUsedNum.get(j).add(character);
-                        squareUsedNum.get(getSquareLocation(i,j)).add(character);
-                        if(fillBoard(i,j + 1,board,lineUsedNum,cellUsedNum,squareUsedNum)){
-                            return true;
-                        } else {
-                            // 还原场景
-                            board[i][j] = '.';
-                            lineUsedNum.get(i).remove(character);
-                            cellUsedNum.get(j).remove(character);
-                            squareUsedNum.get(getSquareLocation(i,j)).remove(character);
-                            // 回退
-                        }
-                    }
-                }
-                j++;
+    private boolean fillBoard(int i, int j, char[][] board, LinkedList<Set<Character>> lineUsedNum, LinkedList<Set<Character>> cellUsedNum, LinkedList<Set<Character>> squareUsedNum) {
+
+        while (board[i][j] != '.'){
+            // 最后一列换行
+            if(++j >= 9){
+                i++;
+                j = 0;
             }
-            i++;
-            j = 0;
+            // 遍历完毕
+            if (i >= 9) {
+                return true;
+            }
+        }
+        // 找可用的值
+        Set<Character> canUsed = canUsed(i,j,lineUsedNum,cellUsedNum,squareUsedNum);
+        if(canUsed.size() == 0){
+            return false;
+        }
+        for(Character character : canUsed){
+            // 尝试每一个可用的值
+            board[i][j] = character;
+            lineUsedNum.get(i).add(character);
+            cellUsedNum.get(j).add(character);
+            squareUsedNum.get(getSquareLocation(i,j)).add(character);
+            if(fillBoard(i,j,board,lineUsedNum,cellUsedNum,squareUsedNum)){
+                return true;
+            } else {
+                // 还原场景
+                board[i][j] = '.';
+                lineUsedNum.get(i).remove(character);
+                cellUsedNum.get(j).remove(character);
+                squareUsedNum.get(getSquareLocation(i,j)).remove(character);
+            }
         }
         return false;
     }
 
-    public static <T> List<T> deepCopy(List<T> src) throws IOException, ClassNotFoundException {
-        ByteArrayOutputStream byteOut = new ByteArrayOutputStream();
-        ObjectOutputStream out = new ObjectOutputStream(byteOut);
-        out.writeObject(src);
-
-        ByteArrayInputStream byteIn = new ByteArrayInputStream(byteOut.toByteArray());
-        ObjectInputStream in = new ObjectInputStream(byteIn);
-        @SuppressWarnings("unchecked")
-        List<T> dest = (List<T>) in.readObject();
-        return dest;
-    }
-
-    public static void main(String[] args) throws IOException, ClassNotFoundException {
+    public static void main(String[] args)  {
         char[][] board = new char[][]{{'5','3','.','.','7','.','.','.','.'},
                 {'6','.','.','1','9','5','.','.','.'},
                 {'.','9','8','.','.','.','.','6','.'},
                 {'8','.','.','.','6','.','.','.','3'},
                 {'4','.','.','8','.','3','.','.','1'},
                 {'7','.','.','.','2','.','.','.','6'},
-                {'.','6','.','.','.','.','.','2','8'},
+                {'.','6','.','.','.','.','2','8','.'},
                 {'.','.','.','4','1','9','.','.','5'},
                 {'.','.','.','.','8','.','.','7','9'}};
         solveSudoku solveSudoku = new solveSudoku();
