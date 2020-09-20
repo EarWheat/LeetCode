@@ -93,7 +93,7 @@ public class solveNQueens {
         List<String> board = new ArrayList<>();
         for (Integer num : path) {
             StringBuilder row = new StringBuilder();
-            row.append(".".repeat(Math.max(0, n)));
+//            row.append(".".repeat(Math.max(0, n)));
             row.replace(num, num + 1, "Q");
             board.add(row.toString());
         }
