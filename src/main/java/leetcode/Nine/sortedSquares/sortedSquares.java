@@ -1,4 +1,4 @@
-package leetcode.Nine;
+package leetcode.Nine.sortedSquares;
 
 /**
  * @author liuzhaoluliuzhaolu
