@@ -34,6 +34,9 @@ public class reverseList {
     }
 
     public static ListNode reverseList(ListNode head) {
+        if(head == null){
+            return head;
+        }
         if(head.next == null){
             return head;
         }
