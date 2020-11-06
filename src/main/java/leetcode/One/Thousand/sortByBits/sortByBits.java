@@ -65,8 +65,6 @@ public class sortByBits {
      * @return
      */
     public static int[] sortByBits(int[] arr) {
-//        QuickSort(arr,0,arr.length - 1);
-        QuickSortV2(arr,0,arr.length - 1);
         Integer[] nums = new Integer[arr.length];
         for (int i = 0; i < arr.length; i++) {
             nums[i] = arr[i];
@@ -80,7 +78,6 @@ public class sortByBits {
         for (int i = 0; i < arr.length; i++) {
             arr[i] = nums[i];
         }
-        return arr;
         return arr;
     }
 
