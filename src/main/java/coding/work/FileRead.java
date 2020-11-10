@@ -35,9 +35,6 @@ public class FileRead {
         }
         Map<String, String> map = LoadVector(filePath);
 //        Map<String, String> map = LoadRemoteVector(filePath);
-        System.out.println(JSONObject.toJSONString(words));
-        long currentTime = System.currentTimeMillis();
-        System.out.println("currentTime:" + currentTime);
         for(int i = 0;i < length;i++){
             String temp = map.get(words.get(i));
             if(StringUtils.isNotBlank(temp)){
@@ -72,7 +69,6 @@ public class FileRead {
         File file = new File(filePath);
         Map<String, String> map = new HashMap<>();
         try {
-            System.out.println(file.exists());
             FileInputStream fileInputStream = new FileInputStream(file);
             InputStreamReader inputStreamReader = new InputStreamReader(fileInputStream);
             BufferedReader reader = new BufferedReader(inputStreamReader);
