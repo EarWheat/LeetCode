@@ -81,13 +81,7 @@ public class allCellsDistOrder {
 
     public List<int[]> getRoadWay(List<int[]> originLocation, int R, int C, boolean[][] visited){
         List<int[]> result = new ArrayList<>();
-        if(originLocation.size() == 0){
-            return null;
-        }
-        for(int i = 0; i < originLocation.size();i++){
-            int[] location = originLocation.get(i);
-            result.addAll()
-        }
+        return result;
     }
 
     public List<int[]> mostRelation(int[] location, int R, int C, boolean[][] visited){
