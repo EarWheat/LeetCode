@@ -6,10 +6,14 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 public class Word2VecBin {
 
-    HashMap<String, float[]> wordMap = new HashMap<String, float[]>();
+    static Map<String, HashMap<String, double[]>> graphMap = new ConcurrentHashMap<String, HashMap<String, double[]>>();
+
+    HashMap<String, double[]> wordMap = new HashMap<String, double[]>();
     int words;
     int size;
     int topNSize = 40;
@@ -23,9 +27,10 @@ public class Word2VecBin {
      * @param word
      * @return
      */
-    public float[] getWordVector(String word) {
+    public double[] getWordVector(String word) {
         return wordMap.get(word);
     }
+
 
     /**
      * 加载模型
@@ -35,40 +40,57 @@ public class Word2VecBin {
      * @throws IOException
      */
     public void loadGoogleModel(String path) throws IOException {
-        DataInputStream dis = null;
-        BufferedInputStream bis = null;
-        double len = 0;
-        float vector = 0;
-        try {
-            URL url = new URL(path);
-            HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-            conn.setConnectTimeout(500);
-            conn.setReadTimeout(500);
 
-            dis = new DataInputStream(conn.getInputStream());
-            words = Integer.parseInt(readString(dis));
-            size = Integer.parseInt(readString(dis));
-            String word;
-            float[] vectors = null;
-            for (int i = 0; i < words; i++) {
-                word = readString(dis);
-                vectors = new float[size];
-                for (int j = 0; j < size; j++) {
-                    vector = readFloat(dis);
-                    len += vector * vector;
-                    vectors[j] = (float) vector;
+
+        if(graphMap.containsKey(path)) {
+            wordMap = graphMap.get(path);
+        }else{
+            DataInputStream dis = null;
+            BufferedInputStream bis = null;
+            double len = 0;
+            double vector = 0;
+
+            try {
+//            本地路径的方法
+//            bis = new BufferedInputStream(new FileInputStream(path));
+//            dis = new DataInputStream(bis);
+//          网络传输的方法
+                URL url = new URL(path);
+                HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+                conn.setConnectTimeout(500);
+                conn.setReadTimeout(500);
+
+                dis = new DataInputStream(conn.getInputStream());
+
+
+                // //读取词数
+                words = Integer.parseInt(readString(dis));
+                // //大小
+                size = Integer.parseInt(readString(dis));
+                String word;
+                double[] vectors = null;
+                for (int i = 0; i < words; i++) {
+                    word = readString(dis);
+                    vectors = new double[size];
+                    for (int j = 0; j < size; j++) {
+                        vector = readFloat(dis);
+                        len += vector * vector;
+                        vectors[j] = (float) vector;
+                    }
+                    wordMap.put(word, vectors);
                 }
-                wordMap.put(word, vectors);
-            }
-        } finally {
-            if(bis != null){
-                bis.close();
-            }
-            if (dis != null){
-                dis.close();
-            }
+                graphMap.put(path, wordMap);
+            } finally {
+                if (bis != null) {
+                    bis.close();
+                }
+                if (dis != null) {
+                    dis.close();
+                }
 
+            }
         }
+
     }
 
 
@@ -100,7 +122,7 @@ public class Word2VecBin {
         return sb.toString();
     }
 
-    public static float readFloat(InputStream is) throws IOException {
+    public static double readFloat(InputStream is) throws IOException {
         byte[] bytes = new byte[4];
         is.read(bytes);
         return getFloat(bytes);
@@ -112,13 +134,13 @@ public class Word2VecBin {
      * @param b
      * @return
      */
-    public static float getFloat(byte[] b) {
+    public static double getFloat(byte[] b) {
         int accum = 0;
         accum = accum | (b[0] & 0xff) << 0;
         accum = accum | (b[1] & 0xff) << 8;
         accum = accum | (b[2] & 0xff) << 16;
         accum = accum | (b[3] & 0xff) << 24;
-        return Float.intBitsToFloat(accum);
+        return Double.valueOf(Float.intBitsToFloat(accum));
     }
 
     private static List<String> getWordVector(String content, String stopWord, Long wordNum, Long worddim, String url) {
@@ -148,7 +170,7 @@ public class Word2VecBin {
             String word = words[i];
 //            System.out.println(word);
 
-            float[] vec = model.getWordVector(word);
+            double[] vec = model.getWordVector(word);
             if (!stopWordsHM.containsKey(word) && vec != null){
                 trueNum++;
 //                System.out.println(Arrays.toString(vec));
