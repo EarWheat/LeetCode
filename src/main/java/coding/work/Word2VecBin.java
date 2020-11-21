@@ -1,5 +1,7 @@
 package coding.work;
 
+import com.alibaba.fastjson.JSONObject;
+
 import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.URL;
@@ -196,14 +198,28 @@ public class Word2VecBin {
     }
 
     public static void main(String[] args) throws IOException {
-        String url = "http://img0.didiglobal.com/static/psi_models/do1_niTrKZU1R8LzlJVwv3pY";
-        String content = "Me cobrou a mais do que o aplicativo informou... Ele não desviou do trânsito porque não quis.... Eu não concordo em ter que pagar a mais,pois não fui informada que si ter trânsito é cobrado a mais...";
-        String stopWord = "de,a,o,que,e,do,da,em,um,para,com,não,uma,os,no,se,na,por,mais,as,dos,como,mas,ao,ele,das,à,seu,sua,ou,quando,muito,nos,já,eu,também,só,pelo,pela,até,isso,ela,entre,depois,sem,mesmo,aos,seus,quem,nas,me,esse,eles,você,essa,num,nem,suas,meu,às,minha,numa,pelos,elas,qual,nós,lhe,deles,essas,esses,pelas,este,dele,tu,te,vocês,vos,lhes,meus,minhas,teu,tua,teus,tuas,nosso,nossa,nossos,nossas,dela,delas,esta,estes,estas,aquele,aquela,aqueles,aquelas,isto,aquilo,estou,está,estamos,estão,estive,esteve,estivemos,estiveram,estava,estávamos,estavam,estivera,estivéramos,esteja,estejamos,estejam,estivesse,estivéssemos,estivessem,estiver,estivermos,estiverem,hei,há,havemos,hão,houve,houvemos,houveram,houvera,houvéramos,haja,hajamos,hajam,houvesse,houvéssemos,houvessem,houver,houvermos,houverem,houverei,houverá,houveremos,houverão,houveria,houveríamos,houveriam,sou,somos,são,era,éramos,eram,fui,foi,fomos,foram,fora,fôramos,seja,sejamos,sejam,fosse,fôssemos,fossem,for,formos,forem,serei,será,seremos,serão,seria,seríamos,seriam,tenho,tem,temos,tém,tinha,tínhamos,tinham,tive,teve,tivemos,tiveram,tivera,tivéramos,tenha,tenhamos,tenham,tivesse,tivéssemos,tivessem,tiver,tivermos,tiverem,terei,terá,teremos,terão,teria,teríamos,teriam";
-        Long wordNum = 30L;
-        Long worddim = 105L;
+//        String url = "http://img0.didiglobal.com/static/psi_models/do1_niTrKZU1R8LzlJVwv3pY";
+//        String content = "Me cobrou a mais do que o aplicativo informou... Ele não desviou do trânsito porque não quis.... Eu não concordo em ter que pagar a mais,pois não fui informada que si ter trânsito é cobrado a mais...";
+//        String stopWord = "de,a,o,que,e,do,da,em,um,para,com,não,uma,os,no,se,na,por,mais,as,dos,como,mas,ao,ele,das,à,seu,sua,ou,quando,muito,nos,já,eu,também,só,pelo,pela,até,isso,ela,entre,depois,sem,mesmo,aos,seus,quem,nas,me,esse,eles,você,essa,num,nem,suas,meu,às,minha,numa,pelos,elas,qual,nós,lhe,deles,essas,esses,pelas,este,dele,tu,te,vocês,vos,lhes,meus,minhas,teu,tua,teus,tuas,nosso,nossa,nossos,nossas,dela,delas,esta,estes,estas,aquele,aquela,aqueles,aquelas,isto,aquilo,estou,está,estamos,estão,estive,esteve,estivemos,estiveram,estava,estávamos,estavam,estivera,estivéramos,esteja,estejamos,estejam,estivesse,estivéssemos,estivessem,estiver,estivermos,estiverem,hei,há,havemos,hão,houve,houvemos,houveram,houvera,houvéramos,haja,hajamos,hajam,houvesse,houvéssemos,houvessem,houver,houvermos,houverem,houverei,houverá,houveremos,houverão,houveria,houveríamos,houveriam,sou,somos,são,era,éramos,eram,fui,foi,fomos,foram,fora,fôramos,seja,sejamos,sejam,fosse,fôssemos,fossem,for,formos,forem,serei,será,seremos,serão,seria,seríamos,seriam,tenho,tem,temos,tém,tinha,tínhamos,tinham,tive,teve,tivemos,tiveram,tivera,tivéramos,tenha,tenhamos,tenham,tivesse,tivéssemos,tivessem,tiver,tivermos,tiverem,terei,terá,teremos,terão,teria,teríamos,teriam";
+//        Long wordNum = 30L;
+//        Long worddim = 105L;
+//
+//        List<String> wordVector = getWordVector(content, stopWord, wordNum, worddim, url);
+//        System.out.println(wordVector);
+        System.out.println(param2JSON("order_id","1234123","country_code","BR"));
+    }
 
-        List<String> wordVector = getWordVector(content, stopWord, wordNum, worddim, url);
-        System.out.println(wordVector);
+    public static String param2JSON(String... str){
+        if(str.length % 2 != 0){
+            return null;
+        }
+        JSONObject jsonObject = new JSONObject();
+        int i = 0;
+        while (i < str.length){
+            jsonObject.put(str[i],str[i+1]);
+            i = i+2;
+        }
+        return jsonObject.toJSONString();
     }
 }
 
