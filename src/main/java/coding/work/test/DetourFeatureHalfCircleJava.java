@@ -1,9 +1,9 @@
 package coding.work.test;
 
-
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -13,14 +13,16 @@ import java.text.SimpleDateFormat;
 import java.util.*;
 import java.math.BigDecimal;
 
+import static trans_func.DetourFeatureHalfCircleAggData.getFeatureAggData;
+import static trans_func.DetourFeatureHalfCircleDetailData.getDetourCircleFeature;
+import static trans_func.DetourFeatureHalfCircleStrategyData.getDetourStragyData;
 
-public class DetourFeatureHalfCircleJava 
-{
+
+public class DetourFeatureHalfCircleJava {
     private static double EARTH_RADIUS = 6378.137;
 
 
-    private static double rad(double d) 
-    {
+    private static double rad(double d) {
         return d * Math.PI / 180.0;
     }
 
@@ -649,7 +651,23 @@ public class DetourFeatureHalfCircleJava
     }
 
 
-    private static JSONArray getRaoQuanResult(String order_stage, Long begin_charge_time, String coordinates_str, String string_geo_points)
+    private static String getRaoQuanResult(String order_stage, 
+                                           Long begin_charge_time, 
+                                           String coordinates_str, 
+                                           String string_geo_points)
+    /*
+    参数:
+    order_stage  中文名称:业务阶段 1代表送驾 0代表接驾  
+    begin_charge_time   牛盾:begin_charge_time_s   牛盾中文:开始计费时间戳秒  
+    coordinates_str  牛盾:driver_route_data 牛盾中文:地图轨迹返回数据
+    string_geo_points 牛盾:qingdaohang_geo_points 牛盾中文:qingdaohang轨迹路径
+
+    函数功能:
+    根据导航路线和司机真实轨迹路线生成绕圈特征
+
+    函数返回:
+    中文: 绕圈轨迹特征  英文: raoquan_track_features
+    */
     {
         // 边缘
         if(coordinates_str.equals("") || coordinates_str.equals("[]")  || null == coordinates_str)
@@ -762,6 +780,14 @@ public class DetourFeatureHalfCircleJava
                 index2 = Long.valueOf(end_routes2);
             }
         }
-        return res_detour;
+        String res_str = null;
+        try
+        {
+            res_str = new ObjectMapper().writeValueAsString(res_detour);
+        } catch (JsonProcessingException e)
+        {
+            e.printStackTrace();
+        }
+        return res_str;
     }
 }

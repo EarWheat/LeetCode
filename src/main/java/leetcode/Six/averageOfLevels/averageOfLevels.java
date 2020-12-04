@@ -1,4 +1,4 @@
-package leetcode.six.averageOfLevels;
+package leetcode.Six.averageOfLevels;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,24 +1,17 @@
 package coding.work.test;
 
-
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
+import org.apache.commons.lang.StringUtils;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
 import java.math.BigDecimal;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
 
 public class DetourFeatureHalfCircleDetailData
 {
     private static double EARTH_RADIUS = 6378.137;
 
-    private static double rad(double d) 
-    {
+    private static double rad(double d) {
         return d * Math.PI / 180.0;
     }
 
@@ -46,17 +39,34 @@ public class DetourFeatureHalfCircleDetailData
         return s;
     }
 
-    public static JSONArray getDetourFeatureHalfCircleDetailData(Long start_time,
+    /*
+    参数:
+    start_time         牛盾中文:开始计费时间戳秒  牛盾:begin_charge_time_s
+    end_time           牛盾中文:订单完成时间戳秒  牛盾:finish_time_s
+    starting_lng       起点经度    starting_lng
+    starting_lat       起点纬度    starting_lat
+    dest_lng           终点经度    dest_lng
+    dest_lat           终点纬度    dest_lat
+    circleFeature_str  绕圈轨迹特征   raoquan_track_features
+
+    函数功能:
+    增加轨迹绕圈类特征数据
+
+    函数返回:
+    中文: 绕圈轨迹特征_新增  英文: raoquan_track_features_update
+ */
+    public static String getDetourFeatureHalfCircleDetailData(Long start_time,
                                                                  Long end_time,
                                                                  BigDecimal starting_lng,
                                                                  BigDecimal starting_lat,
                                                                  BigDecimal dest_lng,
                                                                  BigDecimal dest_lat,
-                                                                 JSONArray circleFeature)
+                                                                 String circleFeature_str)
     {
-        if(null == circleFeature)
+        if(StringUtils.isBlank(circleFeature_str))
             return null;
         //
+        JSONArray circleFeature = JSON.parseArray(circleFeature_str);
         JSONArray res = new JSONArray();
         //
         for(int i=0; i<circleFeature.size(); i++)
@@ -68,7 +78,7 @@ public class DetourFeatureHalfCircleDetailData
             Long raoquan_end_time = tmp.getLong("end_time");
             Double raoquan_end_lat = tmp.getDouble("end_lat");
             Double raoquan_end_lng = tmp.getDouble("end_lng");
-            //
+
             Long raoquan_begin_start_diff_time = raoquan_start_time - start_time;
             Long raoquan_begin_dest_diff_time = end_time - raoquan_start_time;
             Long raoquan_end_start_diff_time = raoquan_end_time - start_time;
@@ -77,7 +87,7 @@ public class DetourFeatureHalfCircleDetailData
             Double raoquan_begin_dest_diff_dis = getDistance(raoquan_start_lat, raoquan_start_lng, Double.parseDouble(String.valueOf(dest_lat)), Double.parseDouble(String.valueOf(dest_lng)));
             Double raoquan_end_start_diff_dis = getDistance(raoquan_end_lat, raoquan_end_lng, Double.parseDouble(String.valueOf(starting_lat)), Double.parseDouble(String.valueOf(starting_lng)));
             Double raoquan_end_dest_diff_dis = getDistance(raoquan_end_lat, raoquan_end_lng, Double.parseDouble(String.valueOf(dest_lat)), Double.parseDouble(String.valueOf(dest_lng)));
-            //
+
             tmp.put("raoquan_begin_start_diff_time", raoquan_begin_start_diff_time);
             tmp.put("raoquan_begin_dest_diff_time", raoquan_begin_dest_diff_time);
             tmp.put("raoquan_end_start_diff_time", raoquan_end_start_diff_time);
@@ -86,8 +96,9 @@ public class DetourFeatureHalfCircleDetailData
             tmp.put("raoquan_begin_dest_diff_dis", raoquan_begin_dest_diff_dis);
             tmp.put("raoquan_end_start_diff_dis", raoquan_end_start_diff_dis);
             tmp.put("raoquan_end_dest_diff_dis", raoquan_end_dest_diff_dis);
+
             res.add(tmp);
         }
-        return res;
+        return JSONObject.toJSONString(res);
     }
 }
