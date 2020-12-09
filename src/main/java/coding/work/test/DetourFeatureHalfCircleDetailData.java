@@ -7,16 +7,13 @@ import org.apache.commons.lang.StringUtils;
 
 import java.math.BigDecimal;
 
-public class DetourFeatureHalfCircleDetailData
-{
-    private static double EARTH_RADIUS = 6378.137;
+public class DetourFeatureHalfCircleDetailData {
 
     private static double rad(double d) {
         return d * Math.PI / 180.0;
     }
 
-    public static double getDistance(double lat1, double lng1, double lat2, double lng2)
-    {
+    public static double getDistance(double lat1, double lng1, double lat2, double lng2) {
         /**
          * 通过经纬度获取距离(单位：米)
          *
@@ -33,6 +30,7 @@ public class DetourFeatureHalfCircleDetailData
         double s = 2 * Math.asin(Math.sqrt(Math.pow(Math.sin(a / 2), 2)
                 + Math.cos(radLat1) * Math.cos(radLat2)
                 * Math.pow(Math.sin(b / 2), 2)));
+        double EARTH_RADIUS = 6378.137;
         s = s * EARTH_RADIUS;
         s = Math.round(s * 10000d) / 10000d;
         s = s * 1000;
@@ -56,21 +54,17 @@ public class DetourFeatureHalfCircleDetailData
     中文: 绕圈轨迹特征_新增  英文: raoquan_track_features_update
  */
     public static String getDetourFeatureHalfCircleDetailData(Long start_time,
-                                                                 Long end_time,
-                                                                 BigDecimal starting_lng,
-                                                                 BigDecimal starting_lat,
-                                                                 BigDecimal dest_lng,
-                                                                 BigDecimal dest_lat,
-                                                                 String circleFeature_str)
-    {
-        if(StringUtils.isBlank(circleFeature_str))
+                                                              Long end_time,
+                                                              BigDecimal starting_lng,
+                                                              BigDecimal starting_lat,
+                                                              BigDecimal dest_lng,
+                                                              BigDecimal dest_lat,
+                                                              String circleFeature_str) {
+        if (StringUtils.isBlank(circleFeature_str))
             return null;
-        //
         JSONArray circleFeature = JSON.parseArray(circleFeature_str);
         JSONArray res = new JSONArray();
-        //
-        for(int i=0; i<circleFeature.size(); i++)
-        {
+        for (int i = 0; i < circleFeature.size(); i++) {
             JSONObject tmp = circleFeature.getJSONObject(i);
             Long raoquan_start_time = tmp.getLong("start_time");
             Double raoquan_start_lat = tmp.getDouble("start_lat");
@@ -100,5 +94,16 @@ public class DetourFeatureHalfCircleDetailData
             res.add(tmp);
         }
         return JSONObject.toJSONString(res);
+    }
+
+    public static void main(String[] args) {
+        Long startTime = 1606000398L;
+        Long endTime = 1606005772L;
+        BigDecimal startLng = new BigDecimal(-38.60265);
+        BigDecimal startLat = new BigDecimal(-3.76966);
+        BigDecimal dest_lng = new BigDecimal(-38.6028);
+        BigDecimal dest_lat = new BigDecimal(-3.76937);
+        String circleFeature_str = "[{\"big_angel_dis\":73.59999999999998,\"end_lat\":-3.77026,\"geo_dis\":670.8,\"charge_dis\":158.69999999999993,\"diff_dis\":-512.1,\"end_time\":1606000722,\"start_routes\":795,\"end_index\":202,\"end_routes\":827,\"order_stage\":\"4\",\"start_time\":1606000529,\"start_lng\":-38.60204,\"big_angel\":155.95013482050524,\"start_index\":80,\"start_lat\":-3.77097,\"end_lng\":-38.60145},{\"big_angel_dis\":257.7,\"end_lat\":-3.76905,\"geo_dis\":0.0,\"charge_dis\":515.8,\"diff_dis\":515.8,\"end_time\":1606001642,\"start_routes\":827,\"end_index\":783,\"end_routes\":827,\"order_stage\":\"4\",\"start_time\":1606001532,\"start_lng\":-38.60189,\"big_angel\":168.7134652869604,\"start_index\":716,\"start_lat\":-3.76925,\"end_lng\":-38.60246},{\"big_angel_dis\":11453.000000000018,\"end_lat\":-3.76817,\"geo_dis\":25.8,\"charge_dis\":24472.30000000016,\"diff_dis\":24446.50000000016,\"end_time\":1606005737,\"start_routes\":824,\"end_index\":3343,\"end_routes\":826,\"order_stage\":\"4\",\"start_time\":1606001676,\"start_lng\":-38.60302,\"big_angel\":178.6790043128642,\"start_index\":803,\"start_lat\":-3.76782,\"end_lng\":-38.60328}]";
+        System.out.println(getDetourFeatureHalfCircleDetailData(startTime,endTime,startLng,startLat,dest_lng,dest_lat,circleFeature_str));
     }
 }

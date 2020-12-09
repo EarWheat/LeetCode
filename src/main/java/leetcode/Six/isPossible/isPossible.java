@@ -45,9 +45,6 @@ public class isPossible {
         if(nums.length < 3){
             return false;
         }
-        // 前3个顺序是否正常
-        for(int i = 0; i < 3; i ++){
-
-        }
+        return false;
     }
 }
