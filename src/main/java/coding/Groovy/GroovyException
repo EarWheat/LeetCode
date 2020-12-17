@@ -1,0 +1,14 @@
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
+
+public static String GroovyException(String json){
+        try {
+            JSONObject jsonObject = JSON.parseObject(json);
+            return jsonObject.toJSONString();
+        } catch (Exception e){
+            System.out.println("Exception");
+            return e.toString();
+        }
+    }
+
+GroovyException(json);
