@@ -3,8 +3,14 @@ package coding.work.test;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
-import org.apache.commons.lang.StringUtils;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import sun.lwawt.macosx.CSystemTray;
 
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
@@ -13,6 +19,7 @@ import java.math.BigDecimal;
 
 
 public class DetourFeatureHalfCircleJava {
+    private static double EARTH_RADIUS = 6378.137;
 
 
     private static double rad(double d) {
@@ -38,7 +45,6 @@ public class DetourFeatureHalfCircleJava {
         double s = 2 * Math.asin(Math.sqrt(Math.pow(Math.sin(a / 2), 2)
                 + Math.cos(radLat1) * Math.cos(radLat2)
                 * Math.pow(Math.sin(b / 2), 2)));
-        double EARTH_RADIUS = 6378.137;
         s = s * EARTH_RADIUS;
         s = Math.round(s * 10000d) / 10000d;
         s = s * 1000;
@@ -49,9 +55,9 @@ public class DetourFeatureHalfCircleJava {
     public static Map<String, Object> findCloseoint(Double lat, Double lng, Long index, List<String> geoPoints)
     {
         Double minDistance = 100000.0;
-        int step = 0;
+        Integer step = 0;
         Long minDistanceIndex = 0L;
-        boolean isContinue = true;
+        Boolean isContinue = true;
         Long i = index;
 
         while (i < geoPoints.size() && isContinue)
@@ -60,8 +66,8 @@ public class DetourFeatureHalfCircleJava {
             if (geoPoint.split(",").length == 2)
             {
                 String[] tmpGeo = geoPoint.split(",");
-                double lat1 = Double.parseDouble(tmpGeo[1].replaceAll("\\.\\.\\.", "").replaceAll("\\.\\.", ""));
-                double lng1 = Double.parseDouble(tmpGeo[0].replaceAll("\\.\\.\\.", "").replaceAll("\\.\\.", ""));
+                Double lat1 = Double.valueOf(tmpGeo[1].replaceAll("\\.\\.\\.", "").replaceAll("\\.\\.", ""));
+                Double lng1 = Double.valueOf(tmpGeo[0].replaceAll("\\.\\.\\.", "").replaceAll("\\.\\.", ""));
                 Double distance = getDistance(lat, lng, lat1, lng1);
                 if (distance <= minDistance)
                 {
@@ -125,6 +131,7 @@ public class DetourFeatureHalfCircleJava {
         }
         else
             endIndex = index.intValue();
+        //存放的是依次的距离之和。后一个点=前一个点+当前点的距离
         List<Double> distanceArr = new ArrayList<Double>();
         Integer shortestIndex = index.intValue();
         Double minDistance = Double.MAX_VALUE;
@@ -133,6 +140,7 @@ public class DetourFeatureHalfCircleJava {
         Double tarLng = 0.0;
         Integer begin = Integer.MAX_VALUE;
         Integer end = Integer.MIN_VALUE;
+        //
         if (ergodicNumber < 0)
         {
             begin = endIndex;
@@ -143,6 +151,7 @@ public class DetourFeatureHalfCircleJava {
             begin = startIndex;
             end = endIndex;
         }
+        //
         ArrayList<Integer> arr = new ArrayList();
         if(ergodicNumber < 0)
         {
@@ -447,7 +456,7 @@ public class DetourFeatureHalfCircleJava {
                 Long last_time = date.getTime();
                 if (now_time>last_time)
                     return 1;
-                 else
+                else
                     return -1;
             }
         };
@@ -480,11 +489,11 @@ public class DetourFeatureHalfCircleJava {
             String stage = tmp_jo.getString("stage");
             if(stage.equals(order_stage))
             {
-               if(timeStampMin > timestmap)
-               {
-                   timeStampMin = timestmap;
-                   geo_points = route_geo_points;
-               }
+                if(timeStampMin > timestmap)
+                {
+                    timeStampMin = timestmap;
+                    geo_points = route_geo_points;
+                }
             }
         }
         return geo_points;
@@ -632,9 +641,9 @@ public class DetourFeatureHalfCircleJava {
             String[] lastPoint = coordinate.get(index - 1).split(",");
             // ??? lat lng 对调  1010 -> 0101
             Double distance = getDistance(Double.valueOf(lastPoint[1]),
-                                          Double.valueOf(lastPoint[0]),
-                                          Double.valueOf(nowPoint[1]),
-                                          Double.valueOf(nowPoint[0]));
+                    Double.valueOf(lastPoint[0]),
+                    Double.valueOf(nowPoint[1]),
+                    Double.valueOf(nowPoint[0]));
             allDistance += distance;
             index ++;
         }
@@ -642,42 +651,35 @@ public class DetourFeatureHalfCircleJava {
     }
 
 
-    /*
-参数:
-order_stage  中文名称:业务阶段 1代表送驾 0代表接驾
-begin_charge_time   牛盾:begin_charge_time_s   牛盾中文:开始计费时间戳秒
-coordinates_str  牛盾:driver_route_data 牛盾中文:地图轨迹返回数据
-string_geo_points 牛盾:qingdaohang_geo_points 牛盾中文:qingdaohang轨迹路径
-
-函数功能:
-根据导航路线和司机真实轨迹路线生成绕圈特征
-
-函数返回:
-中文: 绕圈轨迹特征  英文: raoquan_track_features
-*/
-    private static String getRaoQuanResult(String order_stage, 
-                                           Long begin_charge_time, 
-                                           String coordinates_str, 
-                                           String string_geo_points)
+    public static String getRaoQuanResult(String order_stage, Long begin_charge_time, String coordinates_str, String string_geo_points)
     {
         // 边缘
-        if(StringUtils.isBlank(coordinates_str) ||  coordinates_str.equals("[]"))
-            return "";
-        if(StringUtils.isBlank(order_stage) || null == begin_charge_time)
-            return "";
-        if (StringUtils.isBlank(string_geo_points))
-            return "";
+        if(coordinates_str.equals("") || coordinates_str.equals("[]")  || null == coordinates_str)
+            return null;
+        if(null == order_stage || null == begin_charge_time)
+            return null;
+        if (null == string_geo_points)
+            return null;
+        //
         JSONArray string_geo_points_json = JSON.parseArray(string_geo_points);
+        // 送驾段：会出现两种情况，一种是list中只有一条数据。一种是list中有多条数据。
+        // 一条数据：属于正常的。
+        // 多条数据：
+        // 乘客改道，添加途经点等，不会导致送驾段出现两条数据，因为现在地图那边这块业务暂时不支持。但是这块逻辑需要备注在这里，用于后续的可能会对添加途经点等进行判责。
+        // 有可能司机app重启，会造成首次请求会有超过一条记录。
         String begin_charge_geo_points = filterByStage(string_geo_points_json, order_stage);
+        // 用于存放绕圈类的结果数据
+        // 绕圈类的结果数据，可能存在多条，也就是存在多个圈，需要使用一个数组来存放
         JSONArray coordinates = JSON.parseArray(coordinates_str);
         JSONArray res_detour = new JSONArray();
+        // 司机真实轨迹和导航路径都是有值的。
         if(coordinates.size() != 0 && string_geo_points_json.size() != 0 && begin_charge_geo_points != null)
         {
             int len = coordinates.size();
             JSONObject[] begin_charge_coordinates_json = filterCoordinate(coordinates, begin_charge_time,100000000000L);
             //
             if (null == begin_charge_coordinates_json)
-                return "";
+                return null;
             //
             List<String> begin_charge_coordinates = new ArrayList<String>();
             for(int i = 0; i < begin_charge_coordinates_json.length; i++)
@@ -762,6 +764,155 @@ string_geo_points 牛盾:qingdaohang_geo_points 牛盾中文:qingdaohang轨迹�
                 index2 = Long.valueOf(end_routes2);
             }
         }
-        return JSONObject.toJSONString(res_detour);
+        String res_str = null;
+        if(res_detour.size() == 0){
+            return "";
+        }
+        res_str = JSONObject.toJSONString(res_detour);
+        return res_str;
     }
+
+
+    public static Map<String, String> getRaoQuanFeature(String path)
+    {
+        // 保存结果
+        Map<String, String> save_res_1 = new HashMap<String, String>();
+        try
+        {
+            FileReader fr = new FileReader(path);
+            BufferedReader bf = new BufferedReader(fr);
+            String str;
+            // 跳过首行
+            bf.readLine();
+
+            String guihua_geo_point = "";
+            String true_geo_point = "";
+            // String begin_charage_time = "";
+            String qdh_hafl_circle = "";
+            // 按行读取字符串
+            while ((str = bf.readLine()) != null)
+            {
+                String[] str_list = str.split("\\|");
+                guihua_geo_point = str_list[1];
+                true_geo_point = str_list[2];
+                qdh_hafl_circle = str_list[4];
+
+                // 订单id
+                String order_id = str_list[0];
+                // 司机真实轨迹
+                String coordinates = true_geo_point;
+
+                // 规划路径
+                String string_geo_points = guihua_geo_point;
+                // 订单开始计费时间
+                Long begin_charge_time =  Long.valueOf(str_list[3]); // 1605969241L;
+                // 国家码
+                String country_code = "BR";
+                // 订单状态
+                Long order_status = 5L;
+                // 订单阶段
+                String order_stage = "4";
+                // 初始函数
+                if (order_id.equals("87972320159290"))
+                {
+                    System.out.println(order_id);
+                    System.out.println(begin_charge_time.toString());
+//                     System.out.println(coordinates);
+//                     System.out.println(string_geo_points);
+                }
+                String routes_res = getRaoQuanResult(order_stage, begin_charge_time, coordinates, string_geo_points);
+                if (order_id.equals("87972320159290"))
+                {
+                    System.out.println(routes_res);
+                    System.out.println("-------------------------------------");
+                }
+
+                // System.out.println(order_id + '\t' + routes_res + '\t' + qdh_hafl_circle);
+
+                // 保存结果
+                save_res_1.put(order_id, routes_res);
+            }
+            bf.close();
+            fr.close();
+        }
+        catch (IOException e)
+        {
+            e.printStackTrace();
+        }
+        return save_res_1;
+    }
+
+    public static void main(String[] args) throws IOException {
+        String path = "/Users/didi/IdeaProjects/pgi_alg/src/main/java/trans_func/test_one_sample_badcase_java.csv";
+        FileReader fr = new FileReader(path);
+        BufferedReader bf = new BufferedReader(fr);
+        String str;
+        // 跳过首行
+        bf.readLine();
+        while ((str = bf.readLine()) != null)
+        {
+            String[] str_list = str.split("\\|");
+            String order_stage = "4";
+            Long begin_charge_time = Long.valueOf(str_list[3]);
+            String coordinates = str_list[2];
+            String string_geo_points = str_list[1];
+            String res = getRaoQuanResult(order_stage,
+                    begin_charge_time,
+                    coordinates,
+                    string_geo_points);
+            System.out.println(res);
+        }
+    }
+
+//    public static void main(String[] args)
+//    {
+//        //  step 1
+//        String name1 = "/Users/didi/IdeaProjects/pgi_alg/src/main/java/trans_func/process_result_v2.csv";
+//        Map<String, String> save_res_1 = getRaoQuanFeature(name1);
+//        for (String od_id : save_res_1.keySet())
+//        {
+//            String res = save_res_1.get(od_id);
+//            // if (od_id.equals("87972320159290"))
+//            // {
+//            //    System.out.printf("order_id:%s \n res:%s", od_id, res);
+//            //    System.out.println();
+//            // }
+//        }
+//        System.out.println("---------------------------------------------------------------");
+//        System.out.println("---------------------------------------------------------------");
+//        //////////////////////////////////////////////////////////////////////////////////////////////
+//        //  加入新的8个特征
+//        //  开始计费时间  begin_charge_time_s
+//        String name8 = "/Users/didi/IdeaProjects/pgi_alg/src/main/java/trans_func/1-new_8_feature.txt";
+//        Map<String, String> save_res_2 = getDetourCircleFeature(name8, save_res_1);
+//        for (String od_id : save_res_2.keySet())
+//        {
+//            String res = save_res_2.get(od_id);
+//            if (od_id.equals("87972320159290"))
+//                System.out.println(res);
+//        }
+//         System.out.println("---------------------------------------------------------------");
+//        //////////////////////////////////////////////////////////////////////////////////////////////
+//        // 加入11个新特性
+//        String name11 = "/Users/didi/IdeaProjects/pgi_alg/src/main/java/trans_func/1-new_11_feature.txt";
+//        Map<String, String> save_res_3 = getFeatureAggData(name11, save_res_2);
+//        for (String od_id : save_res_3.keySet())
+//        {
+//            String res = save_res_3.get(od_id);
+//            if (od_id.equals("87972320159290"))
+//                System.out.println(res);
+//        }
+//        System.out.println("---------------------------------------------------------------");
+//        //////////////////////////////////////////////////////////////////////////////////////////////
+//        // 在step 1的基础上增加
+//        String name3 = "/Users/didi/IdeaProjects/pgi_alg/src/main/java/trans_func/1-new_8_feature.txt";
+//        Map<String, String> save_res_4 = getDetourStragyData(name3, save_res_2);
+//        // 结果检测
+//        for (String od_id : save_res_4.keySet())
+//        {
+//            String res = save_res_4.get(od_id);
+//            if (od_id.equals("87972320159290"))
+//                System.out.println(res);
+//        }
+//    }
 }
