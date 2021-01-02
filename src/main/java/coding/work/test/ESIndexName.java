@@ -18,29 +18,13 @@ import java.util.List;
  */
 public class ESIndexName {
 
-    private static String getESIndexName(Integer indexRange) {
-        // 美东机房 国内机房选择不同的searchService，ES 上index name 不同
-        LocalDate now = LocalDate.now();
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyyMM");
-        List<String> suffix = Lists.newArrayList();
-        if (indexRange == 0) {
-            suffix.add(formatter.format(now));
-        } else {
-            int sign = indexRange < 0 ? -1 : 1;
-            indexRange = indexRange * sign;
-            for (int i = 0; i <= indexRange; i++) {
-                suffix.add(formatter.format(now.plusMonths(i * sign)));
-            }
-        }
-        List<String> indexNames = Lists.newArrayList();
-        for (String s : suffix) {
-            indexNames.add("us01-dos-order".concat(s));
-        }
-
-        return Joiner.on(",").join(indexNames);
+    private static String getDay() {
+        LocalDate date = LocalDate.of(2020,12,31);
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("YYYYMM");
+        return formatter.format(date);
     }
 
     public static void main(String[] args) {
-        System.out.println(getESIndexName(-6));
+        System.out.println(getDay());
     }
 }
