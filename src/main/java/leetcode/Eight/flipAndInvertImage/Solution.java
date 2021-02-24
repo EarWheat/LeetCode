@@ -40,7 +40,6 @@ public class Solution {
 
     public static void main(String[] args) {
         int[][] A = new int[][]{{1,1,0},{1,0,1},{0,0,0}};
-        int[][] B = new int[][]
         Solution solution = new Solution();
         System.out.println(JSONObject.toJSONString(solution.flipAndInvertImage(A)));
     }
