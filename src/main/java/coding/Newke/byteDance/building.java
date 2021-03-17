@@ -1,6 +1,5 @@
 package coding.Newke.byteDance;
 
-import coding.Pack;
 
 import java.util.Scanner;
 

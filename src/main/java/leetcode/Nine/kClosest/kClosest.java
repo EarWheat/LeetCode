@@ -1,6 +1,5 @@
 package leetcode.Nine.kClosest;
 
-import coding.Pack;
 import com.alibaba.fastjson.JSONObject;
 
 import java.text.ParseException;
