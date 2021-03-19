@@ -5,7 +5,7 @@ import com.alibaba.fastjson.JSONObject;
 /**
  * @author liuzhaoluliuzhaolu
  * @date 2021/3/19 上午10:45
- * @desc
+ * @desc 快速排序
  * @prd
  * @Modification History:
  * Date         Author          Description
