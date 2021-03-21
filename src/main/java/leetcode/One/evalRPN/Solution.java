@@ -1,5 +1,7 @@
 package leetcode.One.evalRPN;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Queue;
 import java.util.Stack;
 import java.util.concurrent.LinkedBlockingQueue;
@@ -15,6 +17,7 @@ import java.util.concurrent.LinkedBlockingQueue;
  */
 public class Solution {
     public int evalRPN(String[] tokens) {
+        Map map = new HashMap<>();
         Stack<Integer> stack = new Stack<>();
         int num1 = 0;
         int num2 = 0;
