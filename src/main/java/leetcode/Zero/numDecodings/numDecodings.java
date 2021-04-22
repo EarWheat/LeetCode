@@ -1,5 +1,7 @@
 package leetcode.Zero.numDecodings;
 
+import java.util.HashMap;
+
 /**
  * @author liuzhaoluliuzhaolu
  * @date 2021/4/21 下午2:09
@@ -54,6 +56,7 @@ public class numDecodings {
 
 
     public static void main(String[] args) {
+        HashMap map = new HashMap();
         numDecodings numDecodings = new numDecodings();
         System.out.println(numDecodings.numDecodings("10"));
     }
