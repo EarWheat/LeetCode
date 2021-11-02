@@ -5,8 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8e841380-e08a-4cba-bc46-87d9299b3e93" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/leetcode/Five/distributeCandies/Solution.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/leetcode/Five/distributeCandies/distributeCandies.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/leetcode/Two/deleteNode/Solution.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/leetcode/Two/deleteNode/deleteNode.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -261,7 +261,7 @@
       <workItem from="1634614856686" duration="1955000" />
       <workItem from="1635153685441" duration="7577000" />
       <workItem from="1635492951486" duration="20000" />
-      <workItem from="1635494603441" duration="7075000" />
+      <workItem from="1635494603441" duration="7876000" />
     </task>
     <servers />
   </component>
