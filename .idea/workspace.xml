@@ -5,6 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8e841380-e08a-4cba-bc46-87d9299b3e93" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/leetcode/Seven/searchBST/Solution.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/leetcode/Seven/searchBST/searchBST.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -56,7 +58,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="Errors" />
+    <property name="settings.editor.selected.configurable" value="fileTemplates" />
   </component>
   <component name="RunManager" selected="Application.Solution (5)">
     <configuration name="Solution (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -169,7 +171,6 @@
       <item itemvalue="Application.Solution (3)" />
       <item itemvalue="Application.Solution (4)" />
       <item itemvalue="Application.Solution (5)" />
-      <item itemvalue="Tomcat Server.Tomcat 8.0.45" />
     </list>
     <recent_temporary>
       <list>
@@ -268,6 +269,8 @@
       <workItem from="1637562048608" duration="8000" />
       <workItem from="1637576588054" duration="5881000" />
       <workItem from="1637807600383" duration="131000" />
+      <workItem from="1637834799018" duration="287000" />
+      <workItem from="1637838535815" duration="349000" />
     </task>
     <servers />
   </component>
