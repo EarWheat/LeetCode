@@ -5,10 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8e841380-e08a-4cba-bc46-87d9299b3e93" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/leetcode/One/Thousand/largestSumAfterKNegations/Solution.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/leetcode/One/Thousand/largestSumAfterKNegations/largestSumAfterKNegations.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/spring/ISpringApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/leetcode/One/Thousand/largestSumAfterKNegations/Solution.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/One/Thousand/largestSumAfterKNegations/Solution.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -490,12 +488,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/leetcode/One/Thousand/largestSumAfterKNegations/Solution.java</url>
-          <line>30</line>
+          <line>32</line>
           <option name="timeStamp" value="101" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/leetcode/One/Thousand/largestSumAfterKNegations/Solution.java</url>
-          <line>45</line>
+          <line>47</line>
           <option name="timeStamp" value="102" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
@@ -628,7 +626,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/leetcode/One/Thousand/largestSumAfterKNegations/Solution.java</url>
-          <line>14</line>
+          <line>15</line>
           <properties class="leetcode.One.Thousand.largestSumAfterKNegations.Solution" method="largestSumAfterKNegations">
             <option name="EMULATED" value="true" />
           </properties>
