@@ -5,8 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8e841380-e08a-4cba-bc46-87d9299b3e93" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/leetcode/Seven/shortestCompletingWord/Solution.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/leetcode/Seven/shortestCompletingWord/shortestCompletingWord.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/leetcode/Seven/toLowerCase/Solution.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/leetcode/Seven/toLowerCase/toLowerCase.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -655,6 +655,14 @@
             <option name="EMULATED" value="true" />
           </properties>
           <option name="timeStamp" value="104" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/leetcode/Seven/shortestCompletingWord/Solution.java</url>
+          <line>56</line>
+          <properties class="leetcode.Seven.shortestCompletingWord.Solution" method="mapEquals">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="107" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
