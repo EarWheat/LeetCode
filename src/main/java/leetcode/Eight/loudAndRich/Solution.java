@@ -83,4 +83,26 @@ public class Solution {
         System.out.println(solution.loudAndRich(richer,quiet));
     }
 
+    int ans[];
+    public int[] answer(int[][] richer, int[] quiet){
+        List<List<Integer>> richerOnes=new ArrayList<>();//记录比每个人更有钱的人
+        for(int i=0;i<quiet.length;i++){richerOnes.add(new ArrayList<>());}
+        for(int i=0;i<richer.length;i++){richerOnes.get(richer[i][1]).add(richer[i][0]);}
+        ans=new int[quiet.length];
+        for(int i=0;i<quiet.length;i++){ans[i]--;}
+        for(int i=0;i<quiet.length;i++){findLAR(richerOnes,quiet,i);}
+        return ans;
+    }
+
+    public void findLAR(List<List<Integer>> richerOnes,int quiet[],int k){
+        //找到比k更有钱的人里面最安静的那个
+        if(ans[k]>=0){return;}
+        ans[k]=k;
+        for(int i=0;i<richerOnes.get(k).size();i++){
+            int p=richerOnes.get(k).get(i);
+            findLAR(richerOnes,quiet,p);
+            if(quiet[ans[k]]>quiet[ans[p]]){ans[k]=ans[p];}
+        }
+    }
+
 }
