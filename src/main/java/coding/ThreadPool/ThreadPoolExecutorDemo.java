@@ -1,5 +1,6 @@
 package coding.ThreadPool;
 
+import java.util.HashMap;
 import java.util.concurrent.*;
 
 /**
@@ -10,7 +11,7 @@ public class ThreadPoolExecutorDemo {
 
     public static void main(String[] args){
         ArrayBlockingQueue<Runnable> queue = new ArrayBlockingQueue<Runnable>(5);
-        ThreadPoolExecutor poolExecutor = new ThreadPoolExecutor(5, 10, 200, TimeUnit.MILLISECONDS, queue);
+        ThreadPoolExecutor poolExecutor = new ThreadPoolExecutor(5, 10, 200, TimeUnit.MILLISECONDS, queue, new IThreadFactory(), new ThreadPoolExecutor.AbortPolicy());
         for (int i = 0;i < 15; i++){
             MyTask myTask = new MyTask(i);
             poolExecutor.execute(myTask);
