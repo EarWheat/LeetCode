@@ -1,5 +1,7 @@
 package leetcode.Zero.simplifyPath;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Queue;
 import java.util.Stack;
 import java.util.concurrent.LinkedBlockingQueue;
@@ -42,8 +44,53 @@ public class Solution {
         }
     }
 
+
     public static void main(String[] args) {
         Solution solution = new Solution();
-        System.out.println(solution.simplifyPath("/a//b////c/d//././/.."));
+        System.out.println(solution.toChineseNum(340001200567L));
+    }
+
+    private String[] chineseNum = new String[]{"零","一","二","三","四","五","六","七","八","九"};
+    private String[] indexChinese = new String[]{"","十","百","千"};
+    private String[] danwei = new String[]{"","万","亿"};
+
+
+
+    public String toChineseNum(long n){
+        String s = String.valueOf(n);
+        int mark = s.length() / 4;
+        int start = s.length() % 4;
+        StringBuilder result = new StringBuilder();
+        int index = 0;
+        for (index = 0; index < start; index++) {
+            if(index > 0 && s.charAt(index) == '0' && s.charAt(index - 1) == '0'){
+                index++;
+                continue;
+            }
+            result.append(chineseNum[Character.getNumericValue(s.charAt(index))]).append(indexChinese[start - 1 - index]);
+        }
+        if(start > 0){
+            result.append(danwei[mark - 1]);
+        }
+        for (int i = 0; i < mark; i++) {
+            for (int j = 0; j < 4; j++) {
+                if(s.charAt(index) == '0'){
+                    if(j > 0 && s.charAt(index - 1) == '0'){
+                        index++;
+                        continue;
+                    } else {
+                        result.append(chineseNum[Character.getNumericValue(s.charAt(index))]);
+                    }
+                } else {
+                    result.append(chineseNum[Character.getNumericValue(s.charAt(index))]).append(indexChinese[3 - j]);
+                }
+                index++;
+            }
+            if(result.charAt(result.length() - 1) == '零'){
+                result.deleteCharAt(result.length() - 1);
+            }
+            result.append(danwei[mark - 1 - i]);
+        }
+        return result.toString();
     }
 }
