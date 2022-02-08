@@ -28,47 +28,48 @@ package leetcode.Zero.exist;
  */
 public class exist {
     public static boolean exist(char[][] board, String word) {
-        boolean result = false;
-        boolean[][] visited;
+        boolean[][] visited = new boolean[board.length][board[0].length];
         for(int i = 0; i < board.length; i++){
             for(int j = 0; j < board[i].length; j++){
-                if(board[i][j] == word.charAt(0)){
-                    visited = new boolean[board.length][board[0].length];
-                    result = result || wordMatch(board,visited,word,i,j);
+                boolean flag = wordMatch(board,visited,word,i,j,0);
+                if(flag){
+                    return true;
                 }
             }
         }
-        return result;
+        return false;
     }
 
-    public static boolean wordMatch(char[][] board, boolean[][] visited, String word, int i, int j){
-        if(word.length() == 0){
+    public static boolean wordMatch(char[][] board, boolean[][] visited, String word, int i, int j, int k){
+        if (board[i][j] != word.charAt(k)) {
+            return false;
+        } else if (k == word.length() - 1) {
             return true;
         }
-        if(i < 0 || i >= board.length){
-            return false;
+        visited[i][j] = true;
+        int[][] directions = {{0, 1}, {0, -1}, {1, 0}, {-1, 0}};
+        boolean result = false;
+        for (int[] dir : directions) {
+            int newi = i + dir[0], newj = j + dir[1];
+            if (newi >= 0 && newi < board.length && newj >= 0 && newj < board[0].length) {
+                if (!visited[newi][newj]) {
+                    boolean flag = wordMatch(board, visited, word, newi, newj, k + 1);
+                    if (flag) {
+                        result = true;
+                        break;
+                    }
+                }
+            }
         }
-        if(j < 0 || j >= board[0].length){
-            return false;
-        }
-        if(visited[i][j]){
-            return false;
-        }
-        if(board[i][j] == word.charAt(0)){
-            visited[i][j] = true;
-            return wordMatch(board,visited,word.substring(1),i + 1,j)
-                    || wordMatch(board,visited,word.substring(1),i - 1,j)
-                    || wordMatch(board,visited,word.substring(1),i,j + 1)
-                    || wordMatch(board,visited,word.substring(1),i,j - 1);
-        }
-        return false;
+        visited[i][j] = false;
+        return result;
     }
 
     public static void main(String[] args) {
         char[][] test = new char[][]{{'A','B','C','E'},{'S','F','C','S'},{'A','D','E','E'}};
         char[][] test2 = new char[][]{{'C','A','A'},{'A','A','A'},{'B','C','D'}};
-        System.out.println(exist(test2,"AAB"));
-        System.out.println(exist(test,"ABCCED"));
+//        System.out.println(exist(test2,"AAB"));
+        System.out.println(exist(test,"ABCESEEEFS"));
         System.out.println(exist(test,"SEE"));
         System.out.println(exist(test,"ABCB"));
         System.out.println(exist(test,"SECC"));
