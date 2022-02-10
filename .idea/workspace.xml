@@ -5,9 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8e841380-e08a-4cba-bc46-87d9299b3e93" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/coding/Design/SingleTon/SingleTon.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Interview/NodeTransform.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/leetcode/One/Thousand/simplifiedFractions/Solution.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/leetcode/One/Thousand/simplifiedFractions/simplifiedFractions.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/leetcode/Util/ListNodeUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/Util/ListNodeUtil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/leetcode/Two/Thousand/countKDifference/Solution.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/leetcode/Two/Thousand/countKDifference/Solution.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/leetcode/Util/ListNodeUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/leetcode/Util/ListNodeUtil.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,14 +64,14 @@
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="fileTemplates" />
   </component>
-  <component name="RunManager" selected="Application.Solution (2)">
-    <configuration name="PrintNum" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="coding.Thread.PrintNum" />
+  <component name="RunManager" selected="Application.Solution">
+    <configuration name="NodeTransform" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Interview.NodeTransform" />
       <module name="LeetCode" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="coding.Thread.*" />
+          <option name="PATTERN" value="Interview.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -75,13 +79,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Solution (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="leetcode.One.Thousand.longestDiverseString.Solution" />
+    <configuration name="PrintNum" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="coding.Thread.PrintNum" />
       <module name="LeetCode" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="leetcode.One.Thousand.longestDiverseString.*" />
+          <option name="PATTERN" value="coding.Thread.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -104,12 +108,12 @@
       </method>
     </configuration>
     <configuration name="Solution" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="leetcode.Two.countValidWords.Solution" />
+      <option name="MAIN_CLASS_NAME" value="leetcode.One.Thousand.simplifiedFractions.Solution" />
       <module name="LeetCode" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="leetcode.Two.countValidWords.*" />
+          <option name="PATTERN" value="leetcode.One.Thousand.simplifiedFractions.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -155,11 +159,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Solution" />
+        <item itemvalue="Application.NodeTransform" />
         <item itemvalue="Application.Solution (2)" />
         <item itemvalue="Application.PrintNum" />
         <item itemvalue="Application.exist" />
-        <item itemvalue="Application.Solution (1)" />
-        <item itemvalue="Application.Solution" />
       </list>
     </recent_temporary>
   </component>
@@ -617,6 +621,26 @@
           <url>file://$PROJECT_DIR$/src/main/java/leetcode/Zero/exist/exist.java</url>
           <line>71</line>
           <option name="timeStamp" value="183" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Interview/NodeTransform.java</url>
+          <line>30</line>
+          <option name="timeStamp" value="191" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Interview/NodeTransform.java</url>
+          <line>49</line>
+          <option name="timeStamp" value="192" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Interview/NodeTransform.java</url>
+          <line>58</line>
+          <option name="timeStamp" value="193" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Interview/NodeTransform.java</url>
+          <line>55</line>
+          <option name="timeStamp" value="194" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/leetcode/Eight/distanceK/Solution.java</url>

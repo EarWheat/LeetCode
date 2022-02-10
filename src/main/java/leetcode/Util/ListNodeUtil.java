@@ -23,4 +23,12 @@ public class ListNodeUtil {
         }
         return head;
     }
+
+    public static void printNode(ListNode node){
+        while (node != null){
+            System.out.print(node.val + "->");
+            System.out.println();
+            node = node.next;
+        }
+    }
 }
