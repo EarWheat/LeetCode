@@ -13,19 +13,38 @@ import java.util.Arrays;
  */
 public class HeapSort {
 
+
+    public void sort(int[] nums){
+        buildHeap(nums);
+        int len = nums.length;
+        for (int i = nums.length - 1; i >= 0; i--) {
+            swap(nums, 0, i);
+            len--;
+            heapify(nums,0, len);
+        }
+    }
     /**
      * 构建堆
-     * @param nums
      */
-    public void buildHeap(int[] nums, int i){
-        if(i >= nums.length || i <= 1){
-            return;
+    public void buildHeap(int[] nums){
+        for (int i = (int) Math.floor (nums.length / 2); i >= 0; i--) {
+            heapify(nums, i, nums.length);
         }
-        int temp = nums[i];
-        int parentIndex = i / 2 - 1;
-        while (temp > nums[parentIndex]){
-            swap(nums, i, i / 2);
-            parentIndex = parentIndex / 2;
+    }
+
+    public void heapify(int[] nums, int i, int len){
+        int left = 2 * i + 1;
+        int right = 2 * i + 2;
+        int largest = i;
+        if(left < len && nums[left] > nums[largest]){
+            largest = left;
+        }
+        if(right < len && nums[right] > nums[largest]){
+            largest = right;
+        }
+        if(largest != i){
+            swap(nums, i, largest);
+            heapify(nums, largest, len);
         }
     }
 
@@ -44,10 +63,7 @@ public class HeapSort {
     public static void main(String[] args) {
         HeapSort heapSort = new HeapSort();
         int[] nums = new int[]{4, 4, 6, 5, 3, 2, 8, 1};
-
-        for (int i = 1; i < nums.length; i++) {
-            heapSort.buildHeap(nums, i);
-        }
+        heapSort.sort(nums);
         System.out.println(Arrays.toString(nums));
     }
 }

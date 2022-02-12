@@ -32,7 +32,7 @@ public class Solution {
                 }
             }
         }
-        int result = 0;
+        int visited = 0;
         int max = 0;
         for(Map.Entry<Integer, Integer> entry : map.entrySet()){
             if(entry.getKey() >= max){
