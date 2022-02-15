@@ -5,9 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8e841380-e08a-4cba-bc46-87d9299b3e93" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/leetcode/One/Thousand/luckyNumbers/Solution.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/leetcode/One/Thousand/luckyNumbers/luckyNumbers.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/coding/Sort/BubbleSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/coding/Sort/BubbleSort.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/coding/Sort/QuickSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/coding/Sort/QuickSort.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/coding/Sort/HeapSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/coding/Sort/HeapSort.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -658,6 +659,11 @@
           <line>37</line>
           <option name="timeStamp" value="214" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/coding/Sort/QuickSort.java</url>
+          <line>13</line>
+          <option name="timeStamp" value="215" />
+        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/leetcode/Eight/distanceK/Solution.java</url>
           <line>81</line>
@@ -969,6 +975,14 @@
             <option name="EMULATED" value="true" />
           </properties>
           <option name="timeStamp" value="213" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/coding/Sort/QuickSort.java</url>
+          <line>17</line>
+          <properties class="coding.Sort.QuickSort" method="quickSort">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="216" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

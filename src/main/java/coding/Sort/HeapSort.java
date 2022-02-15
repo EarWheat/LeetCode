@@ -66,4 +66,18 @@ public class HeapSort {
         heapSort.sort(nums);
         System.out.println(Arrays.toString(nums));
     }
+
+
+    public void heapify(int[] nums, int i){
+        int left = 2 * i + 1;
+        int right = 2 * i + 2;
+        if(nums[i] < nums[left]){
+            swap(nums, i, left);
+        }
+        if(nums[i] < nums[right]){
+            swap(nums, i, right);
+        }
+        heapify(nums, left);
+        heapify(nums, right);
+    }
 }
