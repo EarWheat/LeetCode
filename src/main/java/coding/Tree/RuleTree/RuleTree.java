@@ -26,7 +26,7 @@ public class RuleTree {
         /**
          * 当前值
          */
-        Object[] val;
+        Object val;
         /**
          * 下一个节点指针
          */
@@ -56,15 +56,14 @@ public class RuleTree {
      */
     private Node initTree(LinkedList<Object> features){
         Node result = new Node();
-        result.val = new Object[1];
-        result.val[0] = features.poll();
+        result.val = features.poll();
         result.child = initTree(features);
         return result;
     }
 
 
 
-    public void addFeatureRecord(LinkedList<Object> features){
+    public void addFeatureRecord(Node root, LinkedList<Object> features){
         if(features.size() < 1){
             return;
         }
@@ -72,6 +71,16 @@ public class RuleTree {
         if(Objects.isNull(root)){
             initTree(features);
             return;
+        }
+        Object feature = features.poll();
+        Node temp = root;
+        while (temp != null){
+            if(temp.val == feature){
+                addFeatureRecord(temp.child, features);
+                break;
+            } else {
+                temp = temp.next;
+            }
         }
     }
 }
