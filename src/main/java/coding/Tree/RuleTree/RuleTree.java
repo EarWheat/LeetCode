@@ -80,57 +80,58 @@ public class RuleTree {
             roots = initTree(features);
             return;
         }
-        List<Node> temp = roots;
-        while (true){
-            String feature = features.poll();
-            for (Node node : temp) {
-                if (node.val.equalsIgnoreCase(feature)) {
-                    List<Node> child = node.child;
+        String feature = features.poll();
+        for (Node node : roots) {
+            if (node.val.equalsIgnoreCase(feature)) {
+                while (node.child != null){
                     feature = features.poll();
+                    boolean matched = false;
+                    for (Node childNode : node.child){
+                        if(childNode.val.equalsIgnoreCase(feature)){
+                            node = childNode;
+                            matched = true;
+                            break;
+                        }
+                    }
+                    if(!matched){
+                        // 遍历完都不相等
+                        features.add(0, feature);
+                        List<Node> newBranch = initTree(features);
+                        if(newBranch != null){
+                            node.child.addAll(newBranch);
+                            break;
+                        }
+                    }
+                }
+            } else {
+                // 新分支
+                List<Node> newBranch = initTree(features);
+                if(newBranch != null){
+                    roots.addAll(newBranch);
                 }
             }
         }
-//            for(Node child : node.child){
-//                if(child.val.equals(feature)){
-//                    addFeatureRecord(node.child, features);
-//                } else {
-//                    node.child.addAll(initTree(features));
-//                }
-//            }
     }
 
-    public void printTree(List<Node> temp) {
-        while (temp != null) {
-            for (Node node : temp) {
-                System.out.print(node.val + "-");
-                printTree(node.child);
+    public List<String> printTree(List<Node> temp) {
+        List<String> result = new ArrayList<>();
+        if(temp == null){
+            result.add("");
+            return result;
+        }
+        for (Node node : temp) {
+            if(node.val != null){
+                StringBuilder stringBuilder = new StringBuilder();
+                stringBuilder.append(node.val);
+                List<String> str = printTree(node.child);
+                if(str != null){
+                    for(String s : str){
+                        result.add(stringBuilder + " - " + s);
+                    }
+                }
             }
         }
-    }
-
-    public static void main(String[] args) {
-        String record1 = "{\"life_cycle_code\":\"D_STRIVE_ORDER\",\"exec_code\":\"SUCCESS\",\"punish_rule_id\":\"\",\"role\":\"DRV\",\"gp_code\":\"D0401\",\"punish_level\":\"\",\"duty_result\":\"\",\"intercept_result\":\"\",\"punish_type\":\"\",\"canonical_country_code\":\"RU\",\"product_id\":\"21011\",\"hit_strategy_code\":\"VERSION_CONTROL\",\"scene_code\":\"\",\"hit_intercept_code\":\"\",\"city_id\":7380100,\"timestamp\":1645608258907,\"punish_duration\":\"\"}";
-        String record2 = "{\"life_cycle_code\":\"D_STRIVE_ORDER\",\"exec_code\":\"SUCCESS\",\"punish_rule_id\":\"\",\"role\":\"DRV\",\"gp_code\":\"D0401\",\"punish_level\":\"\",\"duty_result\":\"\",\"intercept_result\":\"\",\"punish_type\":\"\",\"canonical_country_code\":\"RU\",\"product_id\":\"21011\",\"hit_strategy_code\":\"WITHOUT_SUPPLY\",\"scene_code\":\"\",\"hit_intercept_code\":\"\",\"city_id\":7490100,\"timestamp\":1645608259518,\"punish_duration\":\"\"}";
-        String record3 = "{\"life_cycle_code\":\"D_STRIVE_ORDER\",\"exec_code\":\"SUCCESS\",\"punish_rule_id\":\"\",\"role\":\"DRV\",\"gp_code\":\"D0401\",\"punish_level\":\"\",\"duty_result\":\"\",\"intercept_result\":\"\",\"punish_type\":\"\",\"canonical_country_code\":\"RU\",\"product_id\":\"21011\",\"hit_strategy_code\":\"WITHOUT_SUPPLY\",\"scene_code\":\"\",\"hit_intercept_code\":\"\",\"city_id\":7380100,\"timestamp\":1645608262778,\"punish_duration\":\"\"}";
-        String record4 = "{\"life_cycle_code\":\"D_STRIVE_ORDER\",\"exec_code\":\"SUCCESS\",\"punish_rule_id\":\"\",\"role\":\"DRV\",\"gp_code\":\"D0401\",\"punish_level\":\"\",\"duty_result\":\"\",\"intercept_result\":\"\",\"punish_type\":\"\",\"canonical_country_code\":\"RU\",\"product_id\":\"21011\",\"hit_strategy_code\":\"VERSION_CONTROL\",\"scene_code\":\"\",\"hit_intercept_code\":\"\",\"city_id\":7810200,\"timestamp\":1645608264837,\"punish_duration\":\"\"}";
-        RuleTree ruleTree = new RuleTree();
-//        ruleTree.addFeatureRecord(ruleTree.fakeHead, featureProcess(record1));
-//        ruleTree.addFeatureRecord(ruleTree.fakeHead, featureProcess(record2));
-//        ruleTree.addFeatureRecord(ruleTree.fakeHead, featureProcess(record3));
-//        ruleTree.addFeatureRecord(ruleTree.fakeHead, featureProcess(record4));
-//        ruleTree.printTree(ruleTree.root);
-    }
-
-    public static LinkedList<String> featureProcess(String s) {
-        JSONObject jsonObject = JSONObject.parseObject(s);
-        LinkedList<String> result = new LinkedList<>();
-        result.add(jsonObject.getString("life_cycle_code"));
-        result.add(jsonObject.getString("role"));
-        result.add(jsonObject.getString("gp_code"));
-        result.add(jsonObject.getString("canonical_country_code"));
-        result.add(jsonObject.getString("product_id"));
-        result.add(jsonObject.getString("city_id"));
-        result.add(jsonObject.getString("hit_strategy_code"));
         return result;
     }
+
 }
