@@ -5,10 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8e841380-e08a-4cba-bc46-87d9299b3e93" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/leetcode/Nine/isInterleave/Solution.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/leetcode/Nine/isInterleave/isInterleave.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/coding/Tree/TreeTest/TreeOrder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/coding/test/Department.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/coding/test/DepartmentTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/leetcode/Zero/recoverTree/Solution.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/leetcode/Zero/recoverTree/recoverTree.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/coding/Tree/RuleTree/RuleTree.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/coding/Tree/RuleTree/RuleTree.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/leetcode/Nine/isInterleave/Solution.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/leetcode/Nine/isInterleave/Solution.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,7 +64,21 @@
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
-  <component name="RunManager" selected="Application.Solution (1)">
+  <component name="RunManager" selected="Application.TreeOrder">
+    <configuration name="DepartmentTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="coding.test.DepartmentTest" />
+      <module name="LeetCode" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="coding.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="RuleTree" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="coding.Tree.RuleTree.RuleTree" />
       <module name="LeetCode" />
@@ -90,34 +107,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Solution (2)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="leetcode.Zero.generateTrees.Solution" />
-      <module name="LeetCode" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="leetcode.Zero.generateTrees.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Solution (4)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="leetcode.Nine.reverseOnlyLetters.Solution" />
-      <module name="LeetCode" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="leetcode.Nine.reverseOnlyLetters.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="Solution" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="leetcode.One.Thousand.findBall.Solution" />
       <module name="LeetCode" />
@@ -125,6 +114,20 @@
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="leetcode.One.Thousand.findBall.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TreeOrder" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="coding.Tree.TreeTest.TreeOrder" />
+      <module name="LeetCode" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="coding.Tree.TreeTest.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -156,11 +159,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.TreeOrder" />
+        <item itemvalue="Application.DepartmentTest" />
         <item itemvalue="Application.Solution (1)" />
         <item itemvalue="Application.RuleTree" />
         <item itemvalue="Application.Solution" />
-        <item itemvalue="Application.Solution (4)" />
-        <item itemvalue="Application.Solution (2)" />
       </list>
     </recent_temporary>
   </component>
@@ -1094,6 +1097,14 @@
             <option name="EMULATED" value="true" />
           </properties>
           <option name="timeStamp" value="269" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/coding/Tree/TreeTest/TreeOrder.java</url>
+          <line>90</line>
+          <properties class="coding.Tree.TreeTest.TreeOrder" method="midOrderV2">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="275" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
