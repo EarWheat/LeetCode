@@ -5,13 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8e841380-e08a-4cba-bc46-87d9299b3e93" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/coding/Tree/TreeTest/TreeOrder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/coding/test/Department.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/coding/test/DepartmentTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/leetcode/Zero/recoverTree/Solution.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/leetcode/Zero/recoverTree/recoverTree.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/leetcode/Two/addDigits/Solution.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/leetcode/Two/addDigits/addDigits.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/leetcode/Nine/isInterleave/Solution.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/leetcode/Nine/isInterleave/Solution.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,7 +60,7 @@
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
-  <component name="RunManager" selected="Application.TreeOrder">
+  <component name="RunManager" selected="Application.Solution (2)">
     <configuration name="DepartmentTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="coding.test.DepartmentTest" />
       <module name="LeetCode" />
@@ -107,13 +103,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Solution" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="leetcode.One.Thousand.findBall.Solution" />
+    <configuration name="Solution (2)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="leetcode.Two.addDigits.Solution" />
       <module name="LeetCode" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="leetcode.One.Thousand.findBall.*" />
+          <option name="PATTERN" value="leetcode.Two.addDigits.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -159,11 +155,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Solution (2)" />
         <item itemvalue="Application.TreeOrder" />
         <item itemvalue="Application.DepartmentTest" />
         <item itemvalue="Application.Solution (1)" />
         <item itemvalue="Application.RuleTree" />
-        <item itemvalue="Application.Solution" />
       </list>
     </recent_temporary>
   </component>
