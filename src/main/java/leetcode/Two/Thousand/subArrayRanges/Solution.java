@@ -1,7 +1,7 @@
 package leetcode.Two.Thousand.subArrayRanges;
 
-import java.util.Arrays;
-import java.util.Map;
+import java.util.*;
+import java.util.concurrent.ArrayBlockingQueue;
 
 /**
  * @author ：liuzhaolu
@@ -40,6 +40,18 @@ public class Solution {
             max = Math.max(nums[k], max);
         }
         pre = max - min;
+    }
+
+    public static void main(String[] args) {
+        PriorityQueue<Integer> priorityQueue = new PriorityQueue<>((a, b) -> {return b - a;});
+        priorityQueue.offer(3);
+        priorityQueue.offer(2);
+        priorityQueue.offer(4);
+        priorityQueue.offer(5);
+        priorityQueue.offer(1);
+        while (!priorityQueue.isEmpty()){
+            System.out.println(priorityQueue.poll());
+        }
     }
 
 }

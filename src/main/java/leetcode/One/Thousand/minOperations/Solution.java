@@ -1,9 +1,7 @@
 package leetcode.One.Thousand.minOperations;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
+import java.util.concurrent.ArrayBlockingQueue;
 
 /**
  * @author liuzhaoluliuzhaolu
@@ -51,6 +49,10 @@ public class Solution {
             }
         }
         return low;
+    }
+
+    public static void main(String[] args) {
+        System.out.println("hello world");
     }
 }
 
