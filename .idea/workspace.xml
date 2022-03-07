@@ -5,13 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8e841380-e08a-4cba-bc46-87d9299b3e93" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Interview/buildTree/Solution.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Interview/buildTree/buildTree.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/leetcode/Two/Thousand/goodDaysToRobBank/Solution.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/leetcode/Two/Thousand/goodDaysToRobBank/goodDaysToRobBank.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/leetcode/Five/convertToBase7/Solution.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/leetcode/Five/convertToBase7/convertToBase7.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/leetcode/One/Thousand/minOperations/Solution.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/One/Thousand/minOperations/Solution.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/leetcode/Two/Thousand/subArrayRanges/Solution.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/Two/Thousand/subArrayRanges/Solution.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,14 +60,14 @@
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
-  <component name="RunManager" selected="Application.Solution (3)">
-    <configuration name="DepartmentTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="coding.test.DepartmentTest" />
+  <component name="RunManager" selected="Application.Solution (1)">
+    <configuration name="Solution (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="leetcode.Five.convertToBase7.Solution" />
       <module name="LeetCode" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="coding.test.*" />
+          <option name="PATTERN" value="leetcode.Five.convertToBase7.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -159,11 +155,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Solution (1)" />
         <item itemvalue="Application.Solution (3)" />
         <item itemvalue="Application.Solution" />
         <item itemvalue="Application.Solution (2)" />
         <item itemvalue="Application.TreeOrder" />
-        <item itemvalue="Application.DepartmentTest" />
       </list>
     </recent_temporary>
   </component>
@@ -787,6 +783,11 @@
           <line>31</line>
           <option name="timeStamp" value="286" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/leetcode/Five/convertToBase7/Solution.java</url>
+          <line>49</line>
+          <option name="timeStamp" value="287" />
+        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/leetcode/Eight/distanceK/Solution.java</url>
           <line>81</line>
@@ -1138,6 +1139,14 @@
             <option name="EMULATED" value="true" />
           </properties>
           <option name="timeStamp" value="281" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/leetcode/Five/convertToBase7/Solution.java</url>
+          <line>12</line>
+          <properties class="leetcode.Five.convertToBase7.Solution" method="convertToBase7">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="288" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
