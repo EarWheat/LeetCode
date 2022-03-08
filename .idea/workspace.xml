@@ -5,8 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8e841380-e08a-4cba-bc46-87d9299b3e93" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/leetcode/Five/convertToBase7/Solution.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/leetcode/Five/convertToBase7/convertToBase7.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/leetcode/Two/Thousand/platesBetweenCandles/Solution.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/leetcode/Two/Thousand/platesBetweenCandles/platesBetweenCandles.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -60,7 +60,7 @@
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
-  <component name="RunManager" selected="Application.Solution (1)">
+  <component name="RunManager" selected="Application.Solution (4)">
     <configuration name="Solution (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="leetcode.Five.convertToBase7.Solution" />
       <module name="LeetCode" />
@@ -103,13 +103,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Solution" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="leetcode.Two.Thousand.subArrayRanges.Solution" />
+    <configuration name="Solution (4)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="leetcode.Two.Thousand.platesBetweenCandles.Solution" />
       <module name="LeetCode" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="leetcode.Two.Thousand.subArrayRanges.*" />
+          <option name="PATTERN" value="leetcode.Two.Thousand.platesBetweenCandles.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -117,13 +117,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TreeOrder" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="coding.Tree.TreeTest.TreeOrder" />
+    <configuration name="Solution" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="leetcode.Two.Thousand.subArrayRanges.Solution" />
       <module name="LeetCode" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="coding.Tree.TreeTest.*" />
+          <option name="PATTERN" value="leetcode.Two.Thousand.subArrayRanges.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -155,11 +155,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Solution (4)" />
         <item itemvalue="Application.Solution (1)" />
         <item itemvalue="Application.Solution (3)" />
         <item itemvalue="Application.Solution" />
         <item itemvalue="Application.Solution (2)" />
-        <item itemvalue="Application.TreeOrder" />
       </list>
     </recent_temporary>
   </component>
@@ -785,8 +785,18 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/leetcode/Five/convertToBase7/Solution.java</url>
-          <line>49</line>
+          <line>31</line>
           <option name="timeStamp" value="287" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/leetcode/Two/Thousand/platesBetweenCandles/Solution.java</url>
+          <line>20</line>
+          <option name="timeStamp" value="289" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/leetcode/Two/Thousand/platesBetweenCandles/Solution.java</url>
+          <line>22</line>
+          <option name="timeStamp" value="293" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/leetcode/Eight/distanceK/Solution.java</url>
