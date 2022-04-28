@@ -1,7 +1,6 @@
 package coding.Tree.RuleTree;
 
 import com.alibaba.fastjson.JSONObject;
-import lombok.NoArgsConstructor;
 
 import java.util.*;
 import java.util.concurrent.ArrayBlockingQueue;
@@ -16,7 +15,6 @@ import java.util.concurrent.ArrayBlockingQueue;
  * 2022/2/21 1:58 下午     liuzhaolu       firstVersion
  */
 
-@NoArgsConstructor
 public class RuleTree {
 //    /**
 //     * 虚假头节点

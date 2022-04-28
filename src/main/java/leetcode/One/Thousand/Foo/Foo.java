@@ -1,6 +1,5 @@
 package leetcode.One.Thousand.Foo;
 
-import lombok.SneakyThrows;
 
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ThreadPoolExecutor;
@@ -48,24 +47,33 @@ public class Foo {
         ThreadPoolExecutor poolExecutor = new ThreadPoolExecutor(3,6,1000, TimeUnit.MILLISECONDS,new LinkedBlockingQueue<>());
         Foo foo = new Foo();
         poolExecutor.execute(new Runnable() {
-            @SneakyThrows
             @Override
             public void run() {
-                foo.first(new First());
+                try {
+                    foo.first(new First());
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
             }
         });
         poolExecutor.execute(new Runnable() {
-            @SneakyThrows
             @Override
             public void run() {
-                foo.second(new Second());
+                try {
+                    foo.second(new Second());
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
             }
         });
         poolExecutor.execute(new Runnable() {
-            @SneakyThrows
             @Override
             public void run() {
-                foo.third(new Third());
+                try {
+                    foo.third(new Third());
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
             }
         });
     }

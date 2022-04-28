@@ -1,6 +1,5 @@
 package leetcode.One.Thousand.ThroneInheritance;
 
-import lombok.Data;
 
 import java.util.*;
 
