@@ -2,8 +2,8 @@
 set timeout 30
 set personalUserName EarWheat
 set personalUserEmail 2636965138@qq.com
-set workUserName liuzhaoluliuzhaolu
-set workUserEmail liuzhaoluliuzhaolu@didiglobal.com
+set workUserName liuzhaolu.lzl
+set workUserEmail liuzhaolu.lzl@alibaba-inc.com
 lindex $argv 0
 
 spawn git config --global user.name $personalUserName
