@@ -5,8 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8e841380-e08a-4cba-bc46-87d9299b3e93" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/leetcode/Nine/RecentCounter/RecentCounter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/leetcode/Nine/RecentCounter/RecentCounter.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/leetcode/Four/minMutation/Solution.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/leetcode/Four/minMutation/minMutation.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -61,9 +61,9 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="fileTemplates" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
-  <component name="RunManager" selected="Application.Solution (5)">
+  <component name="RunManager" selected="Application.Solution (3)">
     <configuration name="Solution (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="leetcode.One.Thousand.getAllElements.Solution" />
       <module name="LeetCode" />
@@ -92,13 +92,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Solution (4)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="leetcode.Eight.binaryGap.Solution" />
+    <configuration name="Solution (3)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="leetcode.Four.minMutation.Solution" />
       <module name="LeetCode" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="leetcode.Eight.binaryGap.*" />
+          <option name="PATTERN" value="leetcode.Four.minMutation.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -158,11 +158,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Solution (5)" />
-        <item itemvalue="Application.Solution (2)" />
-        <item itemvalue="Application.Solution (1)" />
-        <item itemvalue="Application.Solution" />
-        <item itemvalue="Application.Solution (4)" />
+        <item itemvalue="Application.Solution (3)" />
       </list>
     </recent_temporary>
   </component>
@@ -980,6 +976,16 @@
           <line>39</line>
           <option name="timeStamp" value="357" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/leetcode/Four/minMutation/Solution.java</url>
+          <line>53</line>
+          <option name="timeStamp" value="358" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/leetcode/Four/minMutation/Solution.java</url>
+          <line>15</line>
+          <option name="timeStamp" value="359" />
+        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/leetcode/Eight/distanceK/Solution.java</url>
           <line>81</line>
@@ -1356,7 +1362,20 @@
           </properties>
           <option name="timeStamp" value="345" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/leetcode/Four/minMutation/Solution.java</url>
+          <line>19</line>
+          <properties class="leetcode.Four.minMutation.Solution" method="mutation">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="360" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
