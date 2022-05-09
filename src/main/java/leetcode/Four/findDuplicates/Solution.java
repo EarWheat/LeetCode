@@ -1,6 +1,7 @@
 package leetcode.Four.findDuplicates;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -22,5 +23,38 @@ public class Solution {
             }
         }
         return result;
+    }
+
+    private static class Item{
+        int id;
+        String name;
+
+        public Item(int id) {
+            this.id = id;
+        }
+
+        public Item(int id, String name) {
+            this.id = id;
+            this.name = name;
+        }
+    }
+
+    public static void main(String[] args) {
+        Item item1 = new Item(1);
+        Item item2 = new Item(2);
+        Item item3 = new Item(3);
+        Item item4 = new Item(4);
+        Item item5 = new Item(5);
+
+
+        List<Item> itemList = new ArrayList<>();
+        itemList.add(item1);
+        itemList.add(item2);
+        itemList.add(item3);
+        itemList.add(item4);
+        itemList.add(item5);
+        System.out.println("total:"+  Arrays.toString(itemList.toArray()));
+        itemList = itemList.subList(itemList.size() - 3, itemList.size());
+        System.out.println("3:" + Arrays.toString(itemList.toArray()));
     }
 }
