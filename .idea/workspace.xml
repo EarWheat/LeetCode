@@ -5,11 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8e841380-e08a-4cba-bc46-87d9299b3e93" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Interview/isSymmetric/Solution.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Interview/isSymmetric/isSymmetric.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/leetcode/Four/Codec/Answer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/leetcode/Four/Codec/Codec.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/leetcode/Four/Codec/Codec.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/leetcode/Nine/diStringMatch/Solution.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/Nine/diStringMatch/Solution.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/leetcode/Nine/diStringMatch/Solution.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/leetcode/Nine/diStringMatch/Solution.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,7 +64,21 @@
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
-  <component name="RunManager" selected="Application.Solution (1)">
+  <component name="RunManager" selected="Application.Codec">
+    <configuration name="Codec" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="leetcode.Four.Codec.Codec" />
+      <module name="LeetCode" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="leetcode.Four.Codec.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Solution (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Interview.isSymmetric.Solution" />
       <module name="LeetCode" />
@@ -101,20 +114,6 @@
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="leetcode.Four.findDuplicates.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Solution (5)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="leetcode.Seven.numSubarrayProductLessThanK.Solution" />
-      <module name="LeetCode" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="leetcode.Seven.numSubarrayProductLessThanK.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -160,6 +159,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Codec" />
         <item itemvalue="Application.Solution (1)" />
         <item itemvalue="Application.Solution" />
         <item itemvalue="Application.Solution (4)" />
@@ -996,6 +996,11 @@
           <line>17</line>
           <option name="timeStamp" value="361" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/leetcode/Four/Codec/Codec.java</url>
+          <line>124</line>
+          <option name="timeStamp" value="363" />
+        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/leetcode/Eight/distanceK/Solution.java</url>
           <line>81</line>
@@ -1387,5 +1392,10 @@
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
     <select />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/LeetCode$Codec.ic" NAME="Codec Coverage Results" MODIFIED="1652243843163" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>leetcode.Four.Codec.*</FILTER>
+    </SUITE>
   </component>
 </project>
