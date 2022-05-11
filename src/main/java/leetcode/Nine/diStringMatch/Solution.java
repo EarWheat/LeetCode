@@ -1,6 +1,8 @@
 package leetcode.Nine.diStringMatch;
 
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.Map;
 
 /**
  * @Desc:
@@ -24,6 +26,8 @@ public class Solution {
 
     public static void main(String[] args) {
         Solution solution = new Solution();
+        Map<String, String> map = null;
+        System.out.println(map.containsKey("sad"));
         System.out.println(Arrays.toString(solution.diStringMatch("III")));
     }
 }
