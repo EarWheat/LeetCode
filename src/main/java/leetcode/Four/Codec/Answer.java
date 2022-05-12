@@ -2,9 +2,7 @@ package leetcode.Four.Codec;
 
 import leetcode.Util.TreeNode;
 
-import java.util.Arrays;
-import java.util.LinkedList;
-import java.util.Queue;
+import java.util.*;
 import java.util.stream.Collectors;
 
 /**
