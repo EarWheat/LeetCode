@@ -1,5 +1,8 @@
 package leetcode.Six.findKthNumber;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * @Desc: 668. 乘法表中第k小的数
  * @Author: 泽露
@@ -22,5 +25,12 @@ public class Solution {
             }
         }
         return left;
+    }
+
+    public static void main(String[] args) {
+        Map<String, String> map = new HashMap<>();
+        String s = map.get(null);
+        System.out.println(s);
+
     }
 }
