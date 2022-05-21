@@ -11,7 +11,7 @@ public class Solution {
         int[] result = new int[nums.length];
         for (int i = 0; i < nums.length; i++) {
             if(result[nums[i] - 1] >= 1){
-                return i ;
+                return nums[i]  ;
             } else {
                 result[nums[i] - 1]++;
             }
