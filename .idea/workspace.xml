@@ -8,6 +8,7 @@
       <change afterPath="$PROJECT_DIR$/src/main/java/leetcode/One/buildTree/Solution.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/leetcode/One/buildTree/buildTree.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/leetcode/Five/findBottomLeftValue/Solution.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/leetcode/Five/findBottomLeftValue/Solution.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -1125,6 +1126,11 @@
           <line>32</line>
           <option name="timeStamp" value="422" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/leetcode/One/buildTree/Solution.java</url>
+          <line>41</line>
+          <option name="timeStamp" value="423" />
+        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/leetcode/Eight/distanceK/Solution.java</url>
           <line>81</line>
@@ -1653,6 +1659,15 @@
             <option name="WATCH_EXIT" value="false" />
           </properties>
           <option name="timeStamp" value="419" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/leetcode/One/buildTree/Solution.java</url>
+          <line>14</line>
+          <properties class="leetcode.One.buildTree.Solution" method="buildTree">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="424" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
