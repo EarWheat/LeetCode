@@ -31,7 +31,7 @@ public class Solution {
     public Node intersect(Node quadTree1, Node quadTree2) {
         if (quadTree1.isLeaf) {
             if (quadTree1.val) {
-                return new Node(true, true);
+                return new Node();
             }
             return new Node(quadTree2.val, quadTree2.isLeaf, quadTree2.topLeft, quadTree2.topRight, quadTree2.bottomLeft, quadTree2.bottomRight);
         }
