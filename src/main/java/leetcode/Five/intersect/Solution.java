@@ -43,7 +43,7 @@ public class Solution {
         Node o3 = intersect(quadTree1.bottomLeft, quadTree2.bottomLeft);
         Node o4 = intersect(quadTree1.bottomRight, quadTree2.bottomRight);
         if (o1.isLeaf && o2.isLeaf && o3.isLeaf && o4.isLeaf && o1.val == o2.val && o1.val == o3.val && o1.val == o4.val) {
-            return new Node(o1.val, true);
+            return new Node();
         }
         return new Node(false, false, o1, o2, o3, o4);
     }
