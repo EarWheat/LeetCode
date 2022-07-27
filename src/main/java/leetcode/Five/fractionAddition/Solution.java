@@ -69,7 +69,6 @@ public class Solution {
     public static void main(String[] args) {
         String s = "1/2+1/2";
         Solution solution = new Solution();
-        solution.modNum()
         System.out.println(solution.fractionAddition(s));
     }
 }
