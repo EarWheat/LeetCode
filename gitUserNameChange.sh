@@ -14,7 +14,7 @@ spawn git add .
 interact
 spawn git commit -m $argv
 interact
-spawn git push -u origin master
+spawn git push origin master
 interact
 spawn git config --global user.name $workUserName
 interact
