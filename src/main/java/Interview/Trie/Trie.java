@@ -89,10 +89,13 @@ public class Trie {
      */
     public boolean search(String word) {
         List<Trie> child = this.child;
+        if (child == null) {
+            return false;
+        }
         for (Trie trie : child) {
             if (trie.val == word.charAt(0)) {
-                if(word.length() == 1){
-                    return isEnd;
+                if (word.length() == 1) {
+                    return trie.isEnd;
                 }
                 return trie.search(word.substring(1));
             }
@@ -107,6 +110,9 @@ public class Trie {
         if (prefix.length() == 0) {
             return true;
         }
+        if (child == null) {
+            return false;
+        }
         List<Trie> child = this.child;
         for (Trie trie : child) {
             if (trie.val == prefix.charAt(0)) {
@@ -118,11 +124,12 @@ public class Trie {
 
     public static void main(String[] args) {
         Trie trie = new Trie();
-        trie.insert("hello");
-        trie.insert("hell");
-        trie.insert("hella");
-        trie.insert("sadsd");
-        System.out.println(trie.startsWith("h"));
-        System.out.println(trie.search("hella"));
+        trie.search("a");
+        trie.insert("apple");
+        System.out.println(trie.search("apple"));
+        System.out.println(trie.search("app"));
+        System.out.println(trie.startsWith("app"));
+        trie.insert("app");
+        System.out.println(trie.search("app"));
     }
 }
