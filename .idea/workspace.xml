@@ -5,12 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8e841380-e08a-4cba-bc46-87d9299b3e93" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Interview/Trie/Trie.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Interview/Trie/Trie.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/leetcode/One/generateTheString/Solution.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/leetcode/One/generateTheString/generateTheString.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/leetcode/Five/fractionAddition/Solution.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/leetcode/Five/fractionAddition/Solution.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Interview/Trie/Trie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interview/Trie/Trie.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Interview/Trie/Trie.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Interview/Trie/Trie.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -1175,8 +1172,8 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Interview/Trie/Trie.java</url>
-          <line>56</line>
-          <option name="timeStamp" value="457" />
+          <line>129</line>
+          <option name="timeStamp" value="466" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/leetcode/Eight/distanceK/Solution.java</url>
@@ -1799,12 +1796,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/Interview/Trie/Trie.java</url>
-          <line>52</line>
-          <properties class="Interview.Trie.Trie" method="insert">
+          <line>109</line>
+          <properties class="Interview.Trie.Trie" method="startsWith">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
-          <option name="timeStamp" value="456" />
+          <option name="timeStamp" value="467" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

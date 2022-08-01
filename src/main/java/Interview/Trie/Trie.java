@@ -12,17 +12,13 @@ import java.util.List;
 public class Trie {
 
     /**
-     * 假头节点
-     */
-    private Trie fakeHead;
-    /**
      * 当前的值
      */
     private Character val;
     /**
      * 是否结束
      */
-    private Boolean isEnd;
+    private Boolean isEnd = false;
 
     /**
      * 子树
@@ -33,7 +29,6 @@ public class Trie {
      * Initialize your data structure here.
      */
     public Trie() {
-        fakeHead = new Trie(' ');
     }
 
     public Trie(Character c) {
@@ -47,30 +42,45 @@ public class Trie {
         if (word.length() == 0) {
             return;
         }
-        insert(word, fakeHead);
+        insert(word, this);
     }
 
     public void insert(String word, Trie trie) {
         if (word.length() == 0) {
             return;
         }
-        List<Trie> child = trie.child;
-        if (child == null) {
+        List<Trie> childs = trie.child;
+        if (childs == null) {
             Trie newTire = new Trie(word.charAt(0));
+            if (word.length() == 1) {
+                newTire.isEnd = true;
+            }
             newTire.insert(word.substring(1), newTire);
-            child = new ArrayList<>();
-            child.add(newTire);
+            childs = new ArrayList<>();
+            childs.add(newTire);
+            trie.child = childs;
         } else {
             Character current = word.charAt(0);
-            for (Trie newTire : child) {
-                if (newTire.val.equals(current)) {
-                    newTire.insert(word.substring(1));
+            boolean matchChild = false;
+            for (Trie child : childs) {
+                if (child.val.equals(current)) {
+                    matchChild = true;
+                    if (word.length() == 1) {
+                        child.isEnd = true;
+                    }
+                    child.insert(word.substring(1));
                     break;
                 }
             }
-            Trie newTire = new Trie();
-            newTire.insert(word);
-
+            if (!matchChild) {
+                Trie newTire = new Trie(word.charAt(0));
+                if (word.length() == 1) {
+                    newTire.isEnd = true;
+                }
+                newTire.insert(word.substring(1), newTire);
+                childs.add(newTire);
+                trie.child = childs;
+            }
         }
     }
 
@@ -78,6 +88,15 @@ public class Trie {
      * Returns if the word is in the trie.
      */
     public boolean search(String word) {
+        List<Trie> child = this.child;
+        for (Trie trie : child) {
+            if (trie.val == word.charAt(0)) {
+                if(word.length() == 1){
+                    return isEnd;
+                }
+                return trie.search(word.substring(1));
+            }
+        }
         return false;
     }
 
@@ -85,11 +104,25 @@ public class Trie {
      * Returns if there is any word in the trie that starts with the given prefix.
      */
     public boolean startsWith(String prefix) {
+        if (prefix.length() == 0) {
+            return true;
+        }
+        List<Trie> child = this.child;
+        for (Trie trie : child) {
+            if (trie.val == prefix.charAt(0)) {
+                return trie.startsWith(prefix.substring(1));
+            }
+        }
         return false;
     }
 
     public static void main(String[] args) {
         Trie trie = new Trie();
         trie.insert("hello");
+        trie.insert("hell");
+        trie.insert("hella");
+        trie.insert("sadsd");
+        System.out.println(trie.startsWith("h"));
+        System.out.println(trie.search("hella"));
     }
 }
