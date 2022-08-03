@@ -5,11 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8e841380-e08a-4cba-bc46-87d9299b3e93" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/leetcode/Six/MyCircularQueue/MyCircularQueue.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/leetcode/Six/MyCircularQueue/MyCircularQueue.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/leetcode/Eight/orderlyQueue/Solution.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/leetcode/Eight/orderlyQueue/orderlyQueue.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/leetcode/editor.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/leetcode/editor.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Interview/Trie/Trie.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Interview/Trie/Trie.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -1194,27 +1193,27 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/leetcode/Six/MyCircularQueue/MyCircularQueue.java</url>
-          <line>129</line>
+          <line>95</line>
           <option name="timeStamp" value="487" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/leetcode/Six/MyCircularQueue/MyCircularQueue.java</url>
-          <line>109</line>
+          <line>75</line>
           <option name="timeStamp" value="489" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/leetcode/Six/MyCircularQueue/MyCircularQueue.java</url>
-          <line>108</line>
+          <line>74</line>
           <option name="timeStamp" value="490" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/leetcode/Six/MyCircularQueue/MyCircularQueue.java</url>
-          <line>123</line>
+          <line>89</line>
           <option name="timeStamp" value="493" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/leetcode/Six/MyCircularQueue/MyCircularQueue.java</url>
-          <line>119</line>
+          <line>85</line>
           <option name="timeStamp" value="496" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
@@ -1844,24 +1843,6 @@
             <option name="WATCH_EXIT" value="false" />
           </properties>
           <option name="timeStamp" value="467" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/leetcode/Six/MyCircularQueue/MyCircularQueue.java</url>
-          <line>88</line>
-          <properties class="leetcode.Six.MyCircularQueue.MyCircularQueue" method="Rear">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="495" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/leetcode/Six/MyCircularQueue/MyCircularQueue.java</url>
-          <line>58</line>
-          <properties class="leetcode.Six.MyCircularQueue.MyCircularQueue" method="deQueue">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="497" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
