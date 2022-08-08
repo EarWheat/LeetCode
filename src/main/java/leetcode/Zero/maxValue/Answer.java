@@ -65,9 +65,4 @@ public class Answer {
         }
         return res;
     }
-
-    作者：inventionliu
-    链接：https://leetcode.cn/problems/er-cha-shu-ran-se-UGC/solution/xin-de-shu-by-inventionliu-iy3m/
-    来源：力扣（LeetCode）
-    著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
 }
