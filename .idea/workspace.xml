@@ -5,8 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8e841380-e08a-4cba-bc46-87d9299b3e93" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/leetcode/One/Thousand/groupThePeople/Solution.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/leetcode/One/Thousand/groupThePeople/groupThePeople.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/leetcode/Six/MyCircularDeque/MyCircularDeque.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/leetcode/Six/MyCircularDeque/MyCircularDeque.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/leetcode/editor.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/leetcode/editor.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
@@ -1228,6 +1228,11 @@
           <url>file://$PROJECT_DIR$/src/main/java/leetcode/Six/solveEquation/Solution.java</url>
           <line>32</line>
           <option name="timeStamp" value="501" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/leetcode/One/Thousand/groupThePeople/Solution.java</url>
+          <line>28</line>
+          <option name="timeStamp" value="503" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/leetcode/Eight/distanceK/Solution.java</url>
