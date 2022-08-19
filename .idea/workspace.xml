@@ -5,10 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8e841380-e08a-4cba-bc46-87d9299b3e93" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/leetcode/One/Thousand/maxEqualFreq/Solution.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/leetcode/One/Thousand/maxEqualFreq/maxEqualFreq.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/leetcode/One/Thousand/busyStudent/Solution.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/leetcode/editor.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/leetcode/editor.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/leetcode/One/Thousand/maxEqualFreq/Solution.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/leetcode/One/Thousand/maxEqualFreq/Solution.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,6 +66,11 @@
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.37816092" />
     <property name="settings.editor.selected.configurable" value="leetcode.id" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="leetcode.One.Thousand.maxEqualFreq" />
+    </key>
   </component>
   <component name="RunManager" selected="Application.Solution (4)">
     <configuration name="OrderedStream" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -125,12 +130,12 @@
       </method>
     </configuration>
     <configuration name="Solution (4)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="leetcode.One.Thousand.maxEqualFreq.Solution" />
+      <option name="MAIN_CLASS_NAME" value="leetcode.One.Thousand.busyStudent.Solution" />
       <module name="LeetCode" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="leetcode.One.Thousand.maxEqualFreq.*" />
+          <option name="PATTERN" value="leetcode.One.Thousand.busyStudent.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -1253,6 +1258,11 @@
           <url>file://$PROJECT_DIR$/src/main/java/leetcode/One/Thousand/maxEqualFreq/Solution.java</url>
           <line>51</line>
           <option name="timeStamp" value="515" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/leetcode/One/Thousand/busyStudent/Solution.java</url>
+          <line>11</line>
+          <option name="timeStamp" value="517" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/leetcode/Eight/distanceK/Solution.java</url>
