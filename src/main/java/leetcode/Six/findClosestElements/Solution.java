@@ -1,6 +1,7 @@
 package leetcode.Six.findClosestElements;
 
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -43,5 +44,11 @@ public class Solution {
             }
         }
         return low;
+    }
+
+    public static void main(String[] args) {
+        Double res = (double)5789 / (double)100;
+        System.out.println(res);
+        System.out.printf("%.2f", Math.floor(res) / 100);
     }
 }
