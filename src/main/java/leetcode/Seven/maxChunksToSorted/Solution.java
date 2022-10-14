@@ -2,6 +2,8 @@ package leetcode.Seven.maxChunksToSorted;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Stack;
 //给定一个长度为 n 的整数数组 arr ，它表示在 [0, n - 1] 范围内的整数的排列。
 //
@@ -53,7 +55,9 @@ public class Solution {
         int res = 0, max = 0;
         for (int i = 0; i < arr.length; i++){
             max = Math.max(max, arr[i]);//统计前i个位置的最大元素
-            if (max == i) res++;
+            if (max == i) {
+                res++;
+            }
         }
         return res;
     }
