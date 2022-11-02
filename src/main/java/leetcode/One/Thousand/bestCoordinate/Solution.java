@@ -106,5 +106,3 @@ public class Solution {
         return (tower[0] - coordinate[0]) * (tower[0] - coordinate[0]) + (tower[1] - coordinate[1]) * (tower[1] - coordinate[1]);
     }
 }
-
-}
