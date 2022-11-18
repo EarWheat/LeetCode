@@ -5,10 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8e841380-e08a-4cba-bc46-87d9299b3e93" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/leetcode/Seven/numMatchingSubseq/Solution.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/leetcode/editor.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/leetcode/editor.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Interview/Test$LiveWaterFallVO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Interview/Test$LiveWaterFallVO.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Interview/Test.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Interview/Test.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/leetcode/Seven/numMatchingSubseq/Solution.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/leetcode/Seven/numMatchingSubseq/Solution.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,7 +72,7 @@
       <recent name="leetcode.One.Thousand.maxEqualFreq" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Solution (1)">
+  <component name="RunManager" selected="Application.Test">
     <configuration name="Solution (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="leetcode.Seven.numMatchingSubseq.Solution" />
       <module name="LeetCode" />
@@ -167,8 +167,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Solution (1)" />
         <item itemvalue="Application.Test" />
+        <item itemvalue="Application.Solution (1)" />
         <item itemvalue="Application.Solution" />
         <item itemvalue="Application.Solution (4)" />
         <item itemvalue="Application.Solution (3)" />
@@ -2055,6 +2055,15 @@
             <option name="WATCH_EXIT" value="false" />
           </properties>
           <option name="timeStamp" value="558" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/Interview/Test.java</url>
+          <line>27</line>
+          <properties class="Interview.Test">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="562" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
