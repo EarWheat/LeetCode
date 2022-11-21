@@ -56,7 +56,7 @@ import static javax.swing.UIManager.put;
  * @Version: 1.initial version; 2022/11/21 7:40 PM
  */
 public class Solution {
-    private static Map<Integer, int[]> map = new HashMap<>(){{
+    private static Map<Integer, int[]> map = new HashMap<Integer, int[]>(){{
         put(1,  new int[]{100, 0});
         put(2,  new int[]{75, 25});
         put(3,  new int[]{50, 50});
