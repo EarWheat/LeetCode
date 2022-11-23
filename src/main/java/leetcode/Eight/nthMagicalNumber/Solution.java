@@ -33,6 +33,10 @@ package leetcode.Eight.nthMagicalNumber;
 //
 //
 // Related Topics 数学 二分查找 👍 168 👎 0
+
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * @Desc:
  * @Author: 泽露
