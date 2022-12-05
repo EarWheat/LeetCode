@@ -5,8 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8e841380-e08a-4cba-bc46-87d9299b3e93" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/leetcode/One/Thousand/boxMinOperations/Solution.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/leetcode/One/Thousand/boxDelivering/Solution.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Interview/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interview/Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Interview/Test.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Interview/Test.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,7 +75,7 @@
       <recent name="Interview" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Solution">
+  <component name="RunManager" selected="Application.Test">
     <configuration name="Solution (2)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="leetcode.Eight.nthMagicalNumber.Solution" />
       <module name="LeetCode" />
@@ -168,8 +170,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Solution" />
         <item itemvalue="Application.Test" />
+        <item itemvalue="Application.Solution" />
         <item itemvalue="Application.Solution (4)" />
         <item itemvalue="Application.Solution (3)" />
         <item itemvalue="Application.Solution (2)" />
@@ -1373,16 +1375,6 @@
         <line-breakpoint enabled="true" type="java-line">
           <url>file:///var/folders/72/ck6l90n545lgcn6lvht1j0l40000gp/T/leetcode/editor/cn/[1732]找到最高海拔.java</url>
           <option name="timeStamp" value="563" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Interview/Test.java</url>
-          <line>31</line>
-          <option name="timeStamp" value="567" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Interview/Test.java</url>
-          <line>33</line>
-          <option name="timeStamp" value="569" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/leetcode/Eight/distanceK/Solution.java</url>

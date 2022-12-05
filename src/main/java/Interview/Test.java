@@ -18,24 +18,27 @@ public class Test {
     public static Map<String, Integer> nodes = new ConcurrentHashMap<>();
 
     public static void main(String[] args) {
-        nodes.put("1",1);
-        nodes.put("2",2);
-        nodes.put("3",3);
-        new Thread(() -> {
-            for (Map.Entry<String, Integer> entry : nodes.entrySet()) {
-//                try {
-//                    Thread.sleep(1000);
-//                } catch (InterruptedException e) {
-//                    e.printStackTrace();
-//                }
-                System.out.println(entry.getKey() + "---" + entry.getValue());
+        Test test = new Test();
+        for (int i = 0; i < 100; i++) {
+            List<Integer> card = new ArrayList<>();
+            for (int j = 0; j < i; j++) {
+                card.add(i);
             }
-        }).start();
+            test.cutLiveCardSize(card);
+            System.out.println(i + "=======" + card.size());
+        }
+    }
 
+    public void cutLiveCardSize(List<Integer> cards) {
+        if (cards.size() < 7) {
+            return;
+        }
+        while (!matchSize(cards.size())){
+            cards.remove(cards.size() - 1);
+        }
+    }
 
-        new Thread(() -> {
-            nodes.put("100", 100);
-            nodes.put("200", 200);
-        }).start();
+    public boolean matchSize(int size){
+        return (size - 1) % 6 == 0 && ((size - 1) / 6) % 3 == 0;
     }
 }
