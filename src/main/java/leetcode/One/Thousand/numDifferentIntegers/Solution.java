@@ -43,7 +43,12 @@ package leetcode.One.Thousand.numDifferentIntegers;
 //
 // Related Topics 哈希表 字符串 👍 67 👎 0
 
+import com.alibaba.fastjson.JSONArray;
+import com.alibaba.fastjson.JSONObject;
+
 import java.util.HashSet;
+import java.util.List;
+import java.util.Optional;
 import java.util.Set;
 
 /**
@@ -86,5 +91,14 @@ public class Solution {
     public static void main(String[] args) {
         Solution solution = new Solution();
         System.out.println(solution.numDifferentIntegers("leet1234code234"));
+        String s = "{\"result\":[[\"洛丽塔\",\"4\"],[\"骆驼\",\"3\"],[\"罗永浩\",\"2\"]]}";
+        JSONObject result = JSONObject.parseObject(s);
+        JSONArray wordArray = result.getJSONArray("result");
+        for (Object obj : wordArray) {
+            JSONArray word = (JSONArray) obj;
+            String w = String.valueOf(word.get(0));
+            String score = String.valueOf(word.get(1));
+            String s1 = String.valueOf(Optional.ofNullable(word.get(2)).orElse(""));
+        }
     }
 }
