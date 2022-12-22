@@ -56,6 +56,11 @@ package leetcode.One.Thousand.maximumScore;
 // Related Topics 贪心 数学 堆（优先队列） 👍 76 👎 0
 
 
+import com.alibaba.fastjson.JSONObject;
+
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * @Desc:
  * @Author: 泽露
@@ -74,5 +79,13 @@ public class Solution {
             return b + c;
         }
         return (a + b + c) / 2;
+    }
+
+    public static void main(String[] args) {
+        List<Long> tagIds = new ArrayList<>();
+        tagIds.add(221L);
+        tagIds.add(430L);
+        tagIds.add(123L);
+        System.out.println(JSONObject.toJSONString(tagIds));
     }
 }
