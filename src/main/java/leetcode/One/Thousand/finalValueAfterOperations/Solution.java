@@ -77,4 +77,8 @@ public class Solution {
         }
         return result;
     }
+
+    public static void main(String[] args) {
+        System.out.println("3.0".compareToIgnoreCase("2.0") < 0);
+    }
 }
