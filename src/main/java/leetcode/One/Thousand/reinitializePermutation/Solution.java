@@ -51,6 +51,8 @@ package leetcode.One.Thousand.reinitializePermutation;
 // Related Topics 数组 数学 模拟 👍 65 👎 0
 
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * @Desc:
