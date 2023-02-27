@@ -34,7 +34,7 @@ package leetcode.One.Thousand.movesToMakeZigzag;
 // 1 <= nums[i] <= 1000
 //
 // Related Topics 贪心 数组 👍 43 👎 0
-
+// action2
 /**
  * @Desc:
  * @Author: 泽露
