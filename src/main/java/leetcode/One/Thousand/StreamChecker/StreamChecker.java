@@ -55,6 +55,8 @@ package leetcode.One.Thousand.StreamChecker;
 //
 // Related Topics 设计 字典树 数组 字符串 数据流 👍 116 👎 0
 
+import org.apache.commons.lang.StringUtils;
+
 import java.util.LinkedList;
 import java.util.Queue;
 
