@@ -1,6 +1,9 @@
 package leetcode.One.Thousand.canMakePaliQueries;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 //给你一个字符串 s，请你对 s 的子串进行检测。
 //
@@ -49,6 +52,27 @@ import java.util.List;
  * @Version: 1.initial version; 2023/6/15 6:24 PM
  */
 public class Solution {
+
+    public static final SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+
+    public static void main(String[] args) {
+        for (int i = 0; i < 10000; i++) {
+            String start = "2023-06-17 10:00:00";
+            String end = "2023-06-16 23:59:59";
+            Date startDate = null;
+            Date endDate = null;
+            try {
+                startDate = format.parse(start.replaceAll("/", "-"));
+                endDate = format.parse(end.replaceAll("/", "-"));
+            } catch (ParseException e) {
+
+            }
+            Long startTime = startDate.getTime();
+            Long endTime = endDate.getTime();
+            System.out.println(startTime + "===========" + endTime);
+        }
+    }
+
     public List<Boolean> canMakePaliQueries(String s, int[][] queries) {
         int n = s.length();
         int[] count = new int[n + 1];
