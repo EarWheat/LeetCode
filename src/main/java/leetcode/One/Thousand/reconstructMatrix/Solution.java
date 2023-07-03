@@ -46,6 +46,9 @@ package leetcode.One.Thousand.reconstructMatrix;
 //
 // Related Topics 贪心 数组 矩阵 👍 52 👎 0
 
+import io.vavr.control.Either;
+import lombok.Data;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -93,5 +96,46 @@ public class Solution {
             }
         }
         return res;
+    }
+
+    public static void main(String[] args) {
+        Request request = new Request();
+        request.setUserId(12L);
+        request.setLiveSource("test");
+        Either<ErrorInfo, Boolean> either = checkIn(request)
+                .flatMap(Solution::whiteList)
+                .flatMap(Solution::matchSource);
+        System.out.println(either.getOrElse(false));
+    }
+
+    @Data
+    private static class Request {
+        public Long userId;
+        public String liveSource;
+    }
+
+    private static class ErrorInfo {
+
+    }
+
+    public static Either<ErrorInfo, Request> checkIn(Request request) {
+        System.out.println("checkIn start");
+        return Either.right(request);
+    }
+
+    public static Either<ErrorInfo, Request> whiteList(Request request) {
+        System.out.println("start whiteList");
+        if (123L == request.getUserId()) {
+            return Either.right(request);
+        }
+        return Either.left(new ErrorInfo());
+    }
+
+    public static Either<ErrorInfo, Boolean> matchSource(Request request) {
+        System.out.println("start matchSource");
+        if (request.getLiveSource().startsWith("test")) {
+            return Either.right(true);
+        }
+        return Either.left(new ErrorInfo());
     }
 }
