@@ -38,6 +38,12 @@ package leetcode.Nine.minFallingPathSum;
 //
 // Related Topics 数组 动态规划 矩阵 👍 262 👎 0
 
+import com.alibaba.fastjson.JSONObject;
+
+import java.io.UnsupportedEncodingException;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.net.URLDecoder;
 import java.util.Arrays;
 
 /**
@@ -64,5 +70,24 @@ public class Solution {
             }
         }
         return Arrays.stream(dp[n - 1]).min().getAsInt();
+    }
+
+    public static void main(String[] args) throws MalformedURLException, UnsupportedEncodingException {
+        String entryUrl = "taobao://huodong.m.taobao.com/act/talent/live.html?ut_sk=1.YKy2MpAJa00DAPxcYdxiDiow_21380790_1689237164409.Copy.zhibo&bdi=50&mbdfu=10000&rtc_delay=5000&bui=50&max_delay=15000&livesource=share&viewer_id=2426471071&tlre=700&livePlayUrl=artc%3A%2F%2Flivecb-rtclive.taobao.com%2Fmediaplatform%2F278deadf-e8db-48f9-b985-5f08dd35f332%3Fauth_key%3D1691761727-0-0-ece4ba74f309ecaf99054983e163ff89&ibmve=20&ibmc=30&type=507&rtclive=1&nssi=0&id=418298524721&liveUrlType=rtcLive&wh_cid=278deadf-e8db-48f9-b985-5f08dd35f332&artp_switch_flags=69&psid=grtn&dscp=1&sjc=0&sourceType=other&bjip=60&suid=CF99148C-68EC-47C3-9A95-C756F8264FE6&pidm=0&livetype=living&cp_origin=taobaozhibo%7Ca2141.8001249%7C%7B%22feed_id%22%3A%22418298524721%22%2C%22account_id%22%3A%220%22%2C%22spm-cnt%22%3A%22a2141.8001249%22%2C%22app_key%22%3A%2221380790%22%2C%22os%22%3A%22ios%22%7D&F=pc&un=bf215854db863721acb7a888e4a1d6ac&share_crt_v=1&un_site=0&spm=a2159r.13376460.0.0&sp_abtk=common_zhibo_commonInfo&sp_tk=NmlsWGR0c1pzYXk%3D&cpp=1&shareurl=true&short_name=h.50NbBSW&bxsign=scd6z9oVbASCFgl4K83UoKznhClWcQxNfQefSr4E9EWBaiVhCLXhJ_8_OV9FO2Hez4m2D0CoNdYLDX7rHYWxiTLEc2jrqN25NNXtMmdI79Ey_CzHx0L53vVyemLS4JVrEHf&app=macos_safari";
+        String[] split = entryUrl.split("taobao://");
+        System.out.println(split.length);
+        System.out.println(JSONObject.toJSONString(split));
+        //        String liveSource = "";
+//        URL url = new URL(entryUrl);
+//        String query = url.getQuery();
+//        String[] qs = query.split("&");
+//        for (String q : qs) {
+//            if (q.contains("livesource") || q.contains("liveSource")) {
+//                String[] pair = q.split("=");
+//                liveSource = pair[1];
+//                break;
+//            }
+//        }
+//        System.out.println(liveSource);
     }
 }
