@@ -1,7 +1,10 @@
 package coding.ChainBase;
 
+import io.vavr.control.Either;
+
 import java.util.HashMap;
 import java.util.Map;
+import java.util.function.Function;
 
 /**
  * @Desc: 测试链式处理
@@ -19,9 +22,22 @@ public class TestChain {
         return true;
     }
 
-    public Boolean bizHandler(TaskContext context) {
-        return false;
+    public Boolean ruleCheck(TaskContext context) {
+        return true;
     }
+
+    public Either<ErrorCodeEnum, Boolean> bizHandler(TaskContext context) {
+        System.out.println("biz handler start");
+
+        return Either.left(ErrorCodeEnum.UPDATE_ERROR);
+    }
+
+    public Either<ErrorCodeEnum, Boolean> bizHandler2(TaskContext context) {
+        System.out.println("biz2 handler start");
+
+        return Either.left(ErrorCodeEnum.PARAM_ERROR);
+    }
+
 
     public static class TaskContext {
 
@@ -30,8 +46,10 @@ public class TestChain {
     public void test() {
         TaskContext context = new TaskContext();
         ChainHandler<TaskContext> result = ChainHandler.process(context)
-                .handler(this::paramCheck, "参数错误")
-                .handler(this::bizHandler, "业务逻辑出错")
+                .handler(this::paramCheck, ErrorCodeEnum.PARAM_ERROR)
+                .handler(this::ruleCheck, ErrorCodeEnum.PARAM_ERROR)
+                .handler(this::bizHandler)
+                .handler(this::bizHandler2)
                 .result();
         System.out.println(result.getErrMsg());
     }
