@@ -6,7 +6,12 @@ package leetcode.One.Thousand.countPairs2;
  * @Date: 2023/8/23 5:10 PM
  * @Version: 1.initial version; 2023/8/23 5:10 PM
  */
-public class class Solution {
+
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
+
+public class Solution {
     public int[] countPairs(int n, int[][] edges, int[] queries) {
         int[] degree = new int[n];
         Map<Integer, Integer> cnt = new HashMap<Integer, Integer>();
