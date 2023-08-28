@@ -1,5 +1,8 @@
 package leetcode.Zero.insertV2;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * @Desc: 57. 插入区间
  * @Author: 泽露
@@ -7,7 +10,6 @@ package leetcode.Zero.insertV2;
  * @Version: 1.initial version; 2023/8/28 7:30 PM
  */
 public class Solution {
-    class Solution {
         public int[][] insert(int[][] intervals, int[] newInterval) {
             int left = newInterval[0];
             int right = newInterval[1];
