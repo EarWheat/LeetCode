@@ -54,6 +54,8 @@ package leetcode.One.Thousand.minimumJumps;
 //
 // Related Topics 广度优先搜索 数组 动态规划 👍 144 👎 0
 
+import lombok.Data;
+
 import java.util.*;
 
 /**
@@ -95,5 +97,18 @@ public class Solution {
             }
         }
         return -1;
+    }
+
+    public static void main(String[] args) {
+        DO d = new DO();
+        d.setBucketId("asdasdasd");
+        Map<String, Object> map = new HashMap<>();
+        map.put("bucket", d.getBucketId());
+        System.out.println(map.toString());
+    }
+
+    @Data
+    public static class DO {
+        String bucketId;
     }
 }
