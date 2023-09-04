@@ -38,6 +38,11 @@ package leetcode.Four.Codec2;
 //leetcode submit region begin(Prohibit modification and deletion)
 import leetcode.Util.TreeNode;
 
+import java.util.ArrayDeque;
+import java.util.ArrayList;
+import java.util.Deque;
+import java.util.List;
+
 /**
  * @Desc:
  * @Author: 泽露
