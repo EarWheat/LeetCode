@@ -34,6 +34,8 @@ package leetcode.Two.Thousand.waysToBuyPensPencils;
 //
 // Related Topics 数学 枚举 👍 60 👎 0
 
+import java.util.Arrays;
+
 /**
  * @Desc:
  * @Author: 泽露
