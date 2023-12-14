@@ -1,5 +1,9 @@
 package leetcode.Two.Thousand.secondGreaterElement;
 
+import java.time.Instant;
+import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.time.temporal.ChronoUnit;
 import java.util.ArrayDeque;
 import java.util.Arrays;
 import java.util.Deque;
@@ -28,5 +32,14 @@ public class Solution {
             stack.push(i);
         }
         return res;
+    }
+
+    public static void main(String[] args) {
+        //1，获取并转换上次登录时间
+        Instant instant = Instant.ofEpochMilli(1701847431000L);
+        LocalDateTime givenTime = LocalDateTime.ofInstant(instant, ZoneId.systemDefault());
+        // 2，获取当前时间
+        LocalDateTime currentTime = LocalDateTime.now();
+        System.out.println(ChronoUnit.DAYS.between(givenTime, currentTime));
     }
 }
