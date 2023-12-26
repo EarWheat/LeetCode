@@ -2,10 +2,8 @@ package leetcode.Two.Thousand.reverseOddLevels;
 
 import leetcode.Util.TreeNode;
 
-import java.util.ArrayDeque;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Queue;
+import java.text.SimpleDateFormat;
+import java.util.*;
 
 /**
  * @Desc: 反转二叉树的奇数层
@@ -41,5 +39,11 @@ public class Solution {
             isOdd ^= true;
         }
         return root;
+    }
+
+    public static void main(String[] args) {
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyyMMdd HH:mm:ss");
+        String format = simpleDateFormat.format(new Date());
+        System.out.println(format);
     }
 }
