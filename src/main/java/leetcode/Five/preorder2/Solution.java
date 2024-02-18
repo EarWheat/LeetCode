@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * @Desc:
+ * @Desc: 589. N 叉树的前序遍历
  * @Author: 泽露
  * @Date: 2024/2/18 6:04 PM
  * @Version: 1.initial version; 2024/2/18 6:04 PM
