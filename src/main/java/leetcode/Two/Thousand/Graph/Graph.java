@@ -1,9 +1,8 @@
 package leetcode.Two.Thousand.Graph;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.PriorityQueue;
+import com.alibaba.fastjson.JSONObject;
+
+import java.util.*;
 
 /**
  * @Desc:
@@ -55,5 +54,16 @@ public class Graph {
             }
         }
         return -1;
+    }
+
+    public static void main(String[] args) {
+        System.out.println(getBeforeByDayHourTime(1, 1).toString());
+    }
+
+    public static Date getBeforeByDayHourTime(int day, int hour) {
+        Calendar calendar = Calendar.getInstance();
+        calendar.set(Calendar.DATE, calendar.get(Calendar.DATE) - day);
+        calendar.set(Calendar.HOUR_OF_DAY, calendar.get(Calendar.HOUR_OF_DAY) - hour);
+        return calendar.getTime();
     }
 }
